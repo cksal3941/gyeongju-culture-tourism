@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="경주문화관광">
+    <meta name="subject" content="경주시 문화관광 홈페이지입니다.">
+    <meta name="Keywords" content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행">
+    <meta name="description" content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다.">
+    <meta name="author" content="경주문화관광">
+    <title>문화재/역사</title>
+    <!-- font Awesome -->
+    <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Project-images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Project-images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="../Project-images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- slickslider -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header>
+            <nav class="global-header">
+                <!-- 최상단 메뉴 -->
+                <!-- top버튼 넣어야됨 -->
+                <div class="top-menu">
+                    <ul class="top-left-menu">
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/index.do" target="_blank">경주시청</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do" target="_blank">미디어자료관</a></li>
+                    </ul>
+
+                    <ul class="top-right-menu">
+                        <!-- 매일 날짜 가져옴 -->
+                        <li>
+                            <span class="month"></span>.
+                            <span class="date"></span>
+                            (<span class="week"></span>)
+                        </li>
+                        <li class="weather"><span class="temp"></span>°C<span class="weather-icon"></span></li>
+                        <li id="data"></li>
+                        <li class="menu-img"><a href="">전체누리집 바로가기
+                                <img src="../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+                    </ul>
+                </div>
+
+                <div class="mainmenu">
+                    <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
+                    <h1>
+                        <a href="/main"><img src="../Project-images/header/white-logo.png" alt="사이트 로고">
+                            <span>경주문화관광</span></a>
+                    </h1>
+
+
+                    <!-- 메인메뉴 list 안에 submenu 포함 -->
+                    <ul class="mainmenu-list">
+                        <li class="mainmenu-item"><a href="../travel_sub1/travel.html">경주여행</a>
+                            <div class="submenu-list">
+                                <!-- 경주여행 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="">권역별 관광지</a></li>
+                                        <li><a href="../travel_sub1/travel.html">여행코스추천</a></li>
+                                        <li><a href="">경주의 자연</a></li>
+                                        <li><a href="">체험과 레저</a></li>
+                                        <li><a href="">투어프로그램</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="submenu-back"></div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../festival_sub2/festival.html">문화행사</a>
+                            <div class="submenu-list">
+                                <!-- 문화행사 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="">이달의 축제 및 행사</a></li>
+                                        <li><a href="../festival_sub2/festival.html">정기축제 행사안내</a></li>
+                                        <li><a href="">공연전시 정보</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../culture_sub3/culture.html">문화재·역사</a>
+                            <div class="submenu-list">
+                                <!-- 문화재/역사 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="../culture_sub3/culture.html">세계문화유산</a></li>
+                                        <li><a href="">경주의 역사</a></li>
+                                        <li><a href="">분류별 국가유산</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../food_sub4/food.html">음식·숙박·쇼핑</a>
+                            <div class="submenu-list">
+                                <!-- 음식/숙박/쇼핑 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="../food_sub4/food.html">음식</a></li>
+                                        <li><a href="">숙박</a></li>
+                                        <li><a href="">쇼핑</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="/map">여행도우미</a>
+                            <div class="submenu-list">
+                                <!-- 여행도우미 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="/map">교통정보</a></li>
+                                        <li><a href="">문화관광 해설사</a></li>
+                                        <li><a href="">관광안내지도</a></li>
+                                        <li><a href="">공중화장실</a></li>
+                                        <li><a href="">경주관광코스</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="menu-buttons">
+                        <ul>
+                            <li><a href="/login" class="login">로그인</a></li>
+                            <li><a href="/main"><img src="../Project-images/header/home-white.png" alt="메인페이지로 가기"></a>
+                            </li>
+                            <li><a href="">
+                                    <i class="fa-solid fa-bars hamberger"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </nav>
+
+            <!-- header-img -->
+            <div class="header-img">
+                <img src="../Project-images/subpage3(문화재)/header-main.JPG" alt="">
+                <p>문화재·역사</p>
+            </div>
+        </header>
+        <!-- gnb-nav -->
+        <div class="gnb-nav">
+            <div class="gnb-nav-section">
+                <div class="home-section">
+                    <h2 class="home-btn"><a href="/main"><img src="../Project-images/header/home-white.png"
+                                alt="홈버튼"></a></h2>
+                </div>
+                <ul>
+                    <li class="gnb-list"><a href="">문화재·역사</a>
+                        <ul>
+                            <li><a href="../travel_sub1/travel.html">경주여행</a></li>
+                            <li><a href="../festival_sub2/festival.html">문화행사</a></li>
+                            <li><a href="../culture_sub3/culture.html">문화재·역사</a></li>
+                            <li><a href="../food_sub4/food.html">음식·숙박·쇼핑</a></li>
+                            <li><a href="/map">여행도우미</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list"><a href="">세계문화유산</a>
+                        <ul>
+                            <li><a href="">세계문화유산</a></li>
+                            <li><a href="">경주의 역사</a></li>
+                            <li><a href="">분류별 문화재</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list"><a href="">불국사ㆍ석굴암</a>
+                        <ul>
+                            <li><a href="">불국사ㆍ석굴암</a></li>
+                            <li><a href="">양동마을</a></li>
+                            <li><a href="">옥산서원</a></li>
+                            <li><a href="">남산지구</a></li>
+                            <li><a href="">월성지구</a></li>
+                            <li><a href="">대릉원지구</a></li>
+                            <li><a href="">황룡사지구</a></li>
+                            <li><a href="">산성지구</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main>
+            <div class="main-nav">
+                <p>불국사ㆍ석굴암</p>
+                <ul>
+                    <li class="arrow"><a href="/main"><img src="../Project-images/header/home-black.png" alt="홈아이콘"></a>
+                    </li>
+                    <li class="arrow">문화재·역사</li>
+                    <li class="arrow">세계문화유산</li>
+                    <li class="line">불국사ㆍ석굴암</li>
+                    <li class="icon"><img src="../Project-images/header/ilnk.png" alt="링크아이콘"></li>
+                    <li class="icon"><img src="../Project-images/header/copy.png" alt="복사아이콘"></li>
+                    <li class="icon"><img src="../Project-images/header/print.png" alt="인쇄아이콘"></li>
+                </ul>
+            </div>
+
+
+            <!-- 문화재 내용 리스트 -->
+            <ul class="contents-list">
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=264&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/다보탑.jpg" alt="경주 불국사 다보탑 이미지">
+                        <div class="">
+                            <p class="content-title">경주 불국사 다보탑</p>
+                            <p class="content-desc">다보탑과 석가탑(경주 불국사 삼층석탑, 국보)은 우리나라의 가장 대표적인 석탑으로, 높이도 10.29m, 10.75m로
+                                비슷하다. 절내의 대웅전과 자하문 사이의 뜰 동서쪽에 마주 보고 서 있는데, 동쪽탑이 다보탑이다. 다보탑은 특수형 탑을, 석가탑은 우리나라 일반형 석탑을
+                                대표한다고 할 수 있다. 두 탑을 같은 위치에 세운 이유는 ‘과거의 부처’인 다보불(多寶佛)이 ‘현재의 부처’인 석가여래가 설법할 때 옆에서 옳다고
+                                증명한다는『법화경』의 내용을 눈으로 직접 볼 수 있게 탑으로 구현하고자 하기 위함이다.</p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=263&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/사리탑.jpg" alt="경주 불국사 사리탑 이미지">
+                        <div>
+                            <p class="content-title">경주 불국사 사리탑</p>
+                            <p class="content-desc">불국사 강당 뒤쪽의 보호각에 보존되어 있는 사리탑으로, 「불국사사적기(佛國寺事蹟記)」에서 말하는 '광학부도(光學浮屠)'가
+                                곧 이 사리탑을 가리킨다는 견해도 있지만 현재로서는 여래의 사리탑인지 승려의 사리탑인지는 분명하지 않다.
+                                겉모습이 석등과 비슷하게 생긴 사리탑으로, 사리를 모시는 탑신(塔身)을 중심으로 아래는 받침이 되는 기단(基壇)을 두고, 위로는 머리장식을 두었다.</p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=262&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/삼층석탑.jpg" alt="경주 불국사 삼층석탑 이미지">
+                        <div>
+                            <p class="content-title">경주 불국사 삼층석탑</p>
+                            <p class="content-desc">경주 불국사 삼층석탑과 경주 불국사 다보탑(국보)은 절의 대웅전 앞 뜰 동서쪽에 각각 세워져 있는데, 서쪽탑이
+                                삼층석탑이다. 탑의 원래 이름은 ‘석가여래상주설법탑(釋迦如來常住設法塔)’으로, ‘석가탑’이라고 줄여서 부른다. 두 탑을 같은 위치에 세운 이유는 ‘현재의
+                                부처’인 석가여래가 설법하는 것을 ‘과거의 부처’인 다보불(多寶佛)이 옆에서 옳다고 증명한다는『법화경』의 내용에 따른 것이다. 석가탑(경주 불국사 삼층석탑)과
+                                다보탑은 우리나라의 가장 대표적인 석탑으로, 높이도 각 10.75m, 10.29m로 비슷하다</p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=260&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/불국사.jpg" alt="경주 불국사 이미지">
+                        <div>
+                            <p class="content-title">경주 불국사</p>
+                            <p class="content-desc">경주 토함산에 자리잡은 불국사는 신라 경덕왕 10년(751)에 당시 재상이었던 김대성이 짓기 시작하여, 혜공왕
+                                10년(774)에 완성하였다. 이후 조선 선조 26년(1593)에 왜의 침입으로 대부분의 건물이 불타버렸다.
+                                이후 극락전, 자하문, 범영루 등의 일부 건물만이 그 명맥을 이어오다가 1969년에서 1973년에 걸친 발굴조사 뒤 복원을 하여 현재의 모습을 갖추게 되었다.
+                            </p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=258&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/석굴암.jpg" alt="경주 석굴암 석굴 이미지">
+                        <div>
+                            <p class="content-title">경주 석굴암 석굴</p>
+                            <p class="content-desc">석굴암은 신라 경덕왕 10년(751)에 당시 대상이었던 김대성이 창건을 시작하여 혜공왕 10년(774)에 완성하였으며,
+                                건립 당시에는 석불사라고 불렀다. 경덕왕은 신라 중기의 임금으로 그의 재위기간(742∼765) 동안 신라의 불교예술이 전성기를 이루게 되는데, 석굴암 외에도
+                                불국사, 다보탑, 삼층석탑, 황룡사종 등 많은 국가유산들이 이때 만들어졌다.</p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+                <a
+                    href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=176&cmd=2&pageNo=1">
+                    <li class="contents-item">
+                        <img src="../Project-images/subpage3(문화재)/연화교 및 칠보교.jpg" alt="경주 불국사 연화교 및 칠보교 이미지">
+                        <div>
+                            <p class="content-title">경주 불국사 연화교 및 칠보교</p>
+                            <p class="content-desc">불국사의 예배공간인 대웅전과 극락전에 오르는 길은 동쪽의 청운교와 백운교, 서쪽의 연화교와 칠보교가 있다. 연화교와
+                                칠보교는 극락전으로 향하는 안양문과 연결된 다리로, 세속 사람들이 밟는 다리가 아니라, 서방 극락세계의 깨달은 사람만이 오르내리던 다리라고 전해지고 있다.
+                                전체 18계단으로, 밑에는 10단의 연화교가 있고 위에는 8단의 칠보교가 놓여있다.
+                            </p>
+                            <button class="detail">
+                                <span>상세보기<i class="fa-solid fa-chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </li>
+                </a>
+
+            </ul>
+            <!-- 문화재 내용 리스트 끝 -->
+
+
+            <!-- 하단 페이지 버튼 -->
+            <div class="page-btns">
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-angles-left"></i></a></li>
+                    <li><a href=""> <i class="fa-solid fa-angle-left page-angle"></i></a></li>
+                    <li><a href=""><span class="first-page">1</span></a></li>
+                    <li><a href=""><span class="second-page">2</span></a></li>
+                    <li><a href=""><i class="fa-solid fa-angle-right page-angle"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-angles-right"></i></a></li>
+                </ul>
+            </div>
+            <!-- 하단 페이지 버튼 끝 -->
+
+        </main>
+
+        <!-- footer -->
+        <footer>
+
+            <!-- banner -->
+            <div class="banners">
+                <div class="banner-contents">
+                    <div class="banner-list">
+                        <h2>배너모음</h2>
+                        <div class="banner-btn-list">
+                            <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+                            <div class="stop-play">
+                                <button type="button" class="first"><i class="fa-solid fa-pause stop"></i></button>
+                                <button type="button" class="second"><i class="fa-solid fa-play play"></i></button>
+                            </div>
+
+                            <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <ul class="banner-site-list">
+                        <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+                        <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+                        <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
+                                target="_blank">토함산자연휴양림</a>
+                        </li>
+                        <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+                        <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+                        <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+                        <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/gyochon/index.do" target="_blank">경주교촌마을</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/hwarang/index.do" target="_blank">화랑마을</a></li>
+                        <li><a href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448" target="_blank">상상황리단길</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- footer contents -->
+            <div class="footer-contents">
+
+                <!-- footer top -->
+                <div class="top-contents">
+                    <div class="site-info">
+                        <ul>
+                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+                            </li>
+                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
+                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+                            </li>
+                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- footer bottom -->
+                <div class="bottom-contents">
+                    <div class="contents-wrapper">
+                        <div class="footer-logo">
+                            <a href="/main"><img src="../Project-images/footer/flogo.png" alt="로고"></a>
+                        </div>
+                        <div class="info-contents">
+                            <div class="info">
+                                <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                                <span>대표전화 : 054-779-8585</span>
+                                <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+                            </div>
+                            <ul class="icon-list">
+                                <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
+                                            src="../Project-images/footer/youtube.png" alt="유튜브"></a></li>
+                                <li><a href="https://www.facebook.com/gj.tour1/"><img
+                                            src="../Project-images/footer/facebook.png" alt="페이스북"></a></li>
+                                <li><a href="https://blog.naver.com/gj_tour"><img
+                                            src="../Project-images/footer/blog.png" alt="블로그"></a>
+                                </li>
+                                <li><a href="https://www.instagram.com/gj_tour/"><img
+                                            src="../Project-images/footer/insta.png" alt="인스타그램"></a></li>
+                            </ul>
+                        </div>
+
+                        <a
+                            href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                                src="../Project-images/footer/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- footer contents 끝 -->
+
+        </footer>
+        <!-- footer 끝 -->
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

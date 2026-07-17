@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="경주문화관광">
+  <meta name="subject" content="경주시 문화관광 홈페이지입니다.">
+  <meta name="Keywords" content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행">
+  <meta name="description" content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다.">
+  <meta name="author" content="경주문화관광">
+  <title>특산품</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- font Awesome -->
+  <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+  <!------ Google Font ------>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Project-images/favicon_package_v0.16/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../Project-images/favicon_package_v0.16/favicon-16x16.png">
+  <link rel="manifest" href="../Project-images/favicon_package_v0.16/site.webmanifest">
+  <link rel="mask-icon" href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- slickslider -->
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <header>
+      <nav class="global-header">
+        <!-- 최상단 메뉴 -->
+        <!-- top버튼 넣어야됨 -->
+        <div class="top-menu">
+          <ul class="top-left-menu">
+            <li><a href="https://www.gyeongju.go.kr/open_content/ko/index.do" target="_blank">경주시청</a></li>
+            <li><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do" target="_blank">미디어자료관</a></li>
+          </ul>
+
+          <ul class="top-right-menu">
+            <!-- 매일 날짜 가져옴 -->
+            <li>
+              <span class="month"></span>.
+              <span class="date"></span>
+              (<span class="week"></span>)
+            </li>
+            <li class="weather"><span class="temp"></span>°C<span class="weather-icon"></span></li>
+            <li id="data"></li>
+            <li class="menu-img"><a href="">전체누리집 바로가기
+                <img src="../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+          </ul>
+        </div>
+
+        <div class="mainmenu">
+          <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
+          <h1>
+            <a href="/main"><img src="../Project-images/header/white-logo.png" alt="사이트 로고">
+              <span>경주문화관광</span></a>
+          </h1>
+
+
+          <!-- 메인메뉴 list 안에 submenu 포함 -->
+          <ul class="mainmenu-list">
+            <li class="mainmenu-item"><a href="../travel_sub1/travel.html">경주여행</a>
+              <div class="submenu-list">
+                <!-- 경주여행 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="">권역별 관광지</a></li>
+                    <li><a href="../travel_sub1/travel.html">여행코스추천</a></li>
+                    <li><a href="">경주의 자연</a></li>
+                    <li><a href="">체험과 레저</a></li>
+                    <li><a href="">투어프로그램</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="submenu-back"></div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../festival_sub2/festival.html">문화행사</a>
+              <div class="submenu-list">
+                <!-- 문화행사 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="">이달의 축제 및 행사</a></li>
+                    <li><a href="../festival_sub2/festival.html">정기축제 행사안내</a></li>
+                    <li><a href="">공연전시 정보</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../culture_sub3/culture.html">문화재·역사</a>
+              <div class="submenu-list">
+                <!-- 문화재/역사 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="../culture_sub3/culture.html">세계문화유산</a></li>
+                    <li><a href="">경주의 역사</a></li>
+                    <li><a href="">분류별 국가유산</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../food_sub4/food.html">음식·숙박·쇼핑</a>
+              <div class="submenu-list">
+                <!-- 음식/숙박/쇼핑 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="../food_sub4/food.html">음식</a></li>
+                    <li><a href="">숙박</a></li>
+                    <li><a href="">쇼핑</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="/map">여행도우미</a>
+              <div class="submenu-list">
+                <!-- 여행도우미 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="/map">교통정보</a></li>
+                    <li><a href="">문화관광 해설사</a></li>
+                    <li><a href="">관광안내지도</a></li>
+                    <li><a href="">공중화장실</a></li>
+                    <li><a href="">경주관광코스</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="menu-buttons">
+            <ul>
+              <li><a href="/login" class="login">로그인</a></li>
+              <li><a href="/main"><img src="../Project-images/header/home-white.png" alt="메인페이지로 가기"></a></li>
+              <li><a href="">
+                  <i class="fa-solid fa-bars hamberger"></i></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- header-img -->
+      <div class="header-img">
+        <img src="../Project-images/subpage4(음식)/header-main.jpg" alt="음식헤더이미지">
+        <p>음식·숙박·쇼핑</p>
+      </div>
+    </header>
+    <!-- gnb-nav -->
+    <div class="gnb-nav">
+      <div class="gnb-nav-section">
+        <div class="home-section">
+          <h2 class="home-btn"><a href="/main"><img src="../Project-images/header/home-white.png" alt="홈버튼"></a></h2>
+        </div>
+        <ul>
+          <li class="gnb-list"><a href="">음식·숙박·쇼핑</a>
+            <ul>
+              <li><a href="../travel_sub1/travel.html">경주여행</a></li>
+              <li><a href="../festival_sub2/festival.html">문화행사</a></li>
+              <li><a href="../culture_sub3/culture.html">문화재·역사</a></li>
+              <li><a href="../food_sub4/food.html">음식·숙박·쇼핑</a></li>
+              <li><a href="/map">여행도우미</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list"><a href="">쇼핑</a>
+            <ul>
+              <li><a href="">음식</a></li>
+              <li><a href="">숙박</a></li>
+              <li><a href="">쇼핑</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list"><a href="">특산품</a>
+            <ul>
+              <li><a href="">특산품</a></li>
+              <li><a href="">전통시장</a></li>
+              <li><a href="">기념품가게</a></li>
+              <li><a href="">경주몰</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- main -->
+    <main>
+      <!-- sub-list -->
+      <div class="sub-list">
+        <h2>특산품</h2>
+        <div class="utile-wrapper">
+          <ul class="location-wrapper">
+            <li class="arrow-rigth"><a href="/main"><img src="../Project-images/header/home-black.png"
+                  alt="홈페이지아이콘"></a>
+            </li>
+            <li class="arrow-rigth">음식·숙박·쇼핑</li>
+            <li class="arrow-rigth">쇼핑</li>
+            <li class="line">특산품</li>
+          </ul>
+          <ul class="icon-wrapper">
+            <li><img src="../Project-images/header/ilnk.png" alt="링크아이콘"></li>
+            <li><img src="../Project-images/header/copy.png" alt="복사아이콘"></li>
+            <li><img src="../Project-images/header/print.png" alt="프린트아이콘"></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- section1(매장소개) -->
+      <section>
+        <div class="store">
+          <div class="store-item">
+            <h3>경주 농특산물 오프라인/온라인 매장소개</h3>
+            <a class="store-btn" href="https://gjmall.cyso.co.kr/">
+              <img src="../Project-images/subpage4(음식)/btn.png" alt="">
+              온라인 판매처 바로가기</a>
+          </div>
+
+          <div class="store-txt">
+            <ul>
+              <h4>경주본점</h4>
+              <li class="right"><strong>전화</strong>054-777-0230</li>
+              <li><strong>주소</strong>경주시 계림로 69(노동동,황남빵 맞은편)</li>
+              <li><strong>영업시간</strong>주중 10시 ~ 19시 / 주말 10시 ~ 20시</li>
+            </ul>
+            <ul>
+              <h4>불국점</h4>
+              <li class="right"><strong>전화</strong>054-741-8050 </li>
+              <li><strong>주소</strong>경주시 진현로 1길 59-5(불국동, 불국사 상가 내)</li>
+              <li><strong>영업시간</strong>주중 10시 ~ 19시</li>
+            </ul>
+          </div>
+
+          <div class="store-txt">
+            <ul>
+              <h4>신경주역점</h4>
+              <li class="right"><strong>전화</strong>054-748-8954 </li>
+              <li><strong>주소</strong>경주시 건천읍 신경주역로 80 (KTX 신경주역사 내)</li>
+              <li><strong>영업시간</strong>주중 08시 ~ 21시 30분</li>
+            </ul>
+            <ul>
+              <h4>서울점</h4>
+              <li class="right"><strong>전화</strong>054-741-8050 </li>
+              <li><strong>주소</strong>서울시 송파구 올핌픽로 300 롯데월드몰 5층</li>
+              <li><strong>영업시간</strong>주중 10시 30분 ~ 22시</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- section2(특산물 소개) -->
+      <section>
+        <div class="spc">
+          <div class="spc-item">
+            <img src="../Project-images/subpage4(음식)/item1.jpg" alt="">
+            <div class="spc-txt">
+              <h3>경주법주</h3>
+              <p>경주법주는 천년 역사 신라의 도읍지 경주에서 귀족과 화랑이 즐겨 마시던 술이다. 빚는 방법과 음주법도 엄격한 법도를 따랐기
+                때문에 '법주'라 불렸다. 경주법주는 그 비법이 경주 지방 일부 민가에서 명맥만 유지한 채 전해져 내려오다 1972년 한국을
+                대표하는 국주의 필요성이 제기돼 예전 제조 비법을 복원해 발전시키게 됐다.</p>
+              <ul>
+                <li><strong>전화</strong>
+                  054-772-2051</li>
+                <li><strong>주소</strong>
+                  산업로 2944(시래동)</li>
+                <li><strong>홈페이지</strong>
+                  <a href="http://www.kyodongbeobju.com/"> http://www.kyodongbeobju.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="spc-item">
+            <img src="../Project-images/subpage4(음식)/item2.jpg" alt="">
+            <div class="spc-txt">
+              <h3>교동법주</h3>
+              <p>경주교동법주는 조선시대 숙종 때에 사옹원(임금의 식사와 궁중음식을 관리하던 관서)에서 참봉을 지냈던 최국선이
+                낙향하여 사가에서 처음 빚은 가양주이다. 350년의 명맥을 이어온 경주 최씨가문 비주(秘酒)로 맑은 미황색을 띠고
+                감미로운 곡향과 깊은 맛을 자랑한다. 1986년 국가지정 중요무형문화재 86-다호(향토술담기)로 지정되었고,
+                1대 기능보유자인 최씨가문의 며느리 배영신씨에 이어 현재는 그의 아들인 최경씨가 2대 기능보유자로 비법을 계승하고 있다.</p>
+              <ul>
+                <li><strong>전화</strong>
+                  054-772-2051</li>
+                <li><strong>주소</strong>
+                  교촌안길 19-21</li>
+                <li><strong>홈페이지</strong>
+                  <a href="http://www.kyodongbeobju.com/"> http://www.kyodongbeobju.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="spc-item">
+            <img src="../Project-images/subpage4(음식)/item3.jpg" alt="">
+            <div class="spc-txt">
+              <h3>두산명주</h3>
+              <p>감은사지 인근에 전국 유일의 손명주 생산마을인 ‘두산명주마을’이 있다. 비단은 ‘섬유의 여왕’이라 불리는 고급 천연 섬유이다.
+                몸을 감싸는 포근함이 일품이고, 가볍고 통기성도 뛰어나다. 또, 어떤 색으로도 염색이 가능한 질긴 섬유라 활용도가 높다. 두산명주는
+                대에 대를 이어 노하우를 보유한 마을 주민들이 전통방식을 고수하며 100% 수작업으로 짜내 최고의 품질을 자랑한다. 마을에는
+                손명주의 우수성을 홍보하고 기술의 계승발전, 관광콘텐츠로 활용하고자 전통명주전시관이 건립되었다. </p>
+              <ul>
+                <li><strong>전화</strong>
+                  054-742-0261 / 053-779-6287</li>
+                <li><strong>주소</strong>
+                  경주시농협원예조합/경주시 농정과</li>
+                <li><strong>홈페이지</strong>
+                  <a href="http://www.gyeongju.go.kr/esageum"> http://www.gyeongju.go.kr/esageum</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="spc-item">
+            <img src="../Project-images/subpage4(음식)/item4.jpg" alt="">
+            <div class="spc-txt">
+              <h3>이사금</h3>
+              <h4>서라벌의 자연과 농민의 정성이 최고의 농산물을 만듭니다.</h4>
+              <p>이사금은 경주의 농산물 공동 브랜드로 신라 제3대 유리왕때의 임금의 칭호로 우리나라의 임금 농산물,
+                즉 대표적 농산물이 되겠다는 의지를 표현하고 있다.</p>
+              <ul>
+                <li><strong>전화</strong>
+                  054-777-3492</li>
+                <li><strong>주소</strong>
+                  문무대왕면 명주길 154</li>
+                <li><strong>홈페이지</strong>
+                  <a href="http://www.gyeongju.go.kr/gjsilk"> http://www.gyeongju.go.kr/gjsilk/</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="spc-item">
+            <img src="../Project-images/subpage4(음식)/item5.jpg" alt="">
+            <div class="spc-txt">
+              <h3>천년한우</h3>
+              <h4>맛에서 느껴지는 순수혈통 한우, 한우의 품격 “천년한우”</h4>
+              <p>천년한우는 건강한 한우로부터 육질의 고기가 생산된다는 이념아래, 엄격하고 까다로운 관리체계를 갖추어
+                우수한 축산물을 제공하고 있습니다.</p>
+              <div class="cow">
+                <ul class="cow-dot">
+                  <li><strong>전화</strong>
+                  </li>
+                </ul>
+                <ul class="cow-txt">
+                  <li>054-761-3198(안강점)</li>
+                  <li>054-742-1452(황성점)</li>
+                  <li>054-741-8006(보문명품관)</li>
+                  <li>054-777-1735(보문점)</li>
+                  <li>054-741-1737(외동프라자)</li>
+                </ul>
+                <ul class="cow-dot">
+                  <li><strong>주소</strong>
+                  </li>
+                </ul>
+                <ul class="cow-txt">
+                  <li>안강읍 비화동길 3-29(안강점)</li>
+                  <li>갓뒤동녘길 5(황성점)</li>
+                  <li>보문로 545-9(보문명품관)</li>
+                  <li>보문로 545-9(보문점)</li>
+                  <li>외동읍 산업로 2157(외동프라자)</li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+  </div>
+  </section>
+
+  <!-- section3(하단버튼)  -->
+  <section>
+    <!-- 하단 페이지 버튼 -->
+    <div class="page-btns">
+      <ul>
+        <li><a href=""><i class="fa-solid fa-angles-left"></i></a></li>
+        <li><a href=""> <i class="fa-solid fa-angle-left page-angle"></i></a></li>
+        <li><a href=""><span class="first-page">1</span></a></li>
+        <li><a href=""><span class="second-page">2</span></a></li>
+        <li><a href=""><i class="fa-solid fa-angle-right page-angle"></i></a></li>
+        <li><a href=""><i class="fa-solid fa-angles-right"></i></a></li>
+      </ul>
+    </div>
+    <!-- 하단 페이지 버튼 끝 -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+
+      <!-- banner -->
+      <div class="banners">
+        <div class="banner-contents">
+          <div class="banner-list">
+            <h2>배너모음</h2>
+            <div class="banner-btn-list">
+              <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+              <div class="stop-play">
+                <button type="button" class="first"><i class="fa-solid fa-pause stop"></i></button>
+                <button type="button" class="second"><i class="fa-solid fa-play play"></i></button>
+              </div>
+
+              <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+
+          <ul class="banner-site-list">
+            <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+            <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+            <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027" target="_blank">토함산자연휴양림</a>
+            </li>
+            <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+            <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+            <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+            <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+            <li><a href="https://www.gyeongju.go.kr/gyochon/index.do" target="_blank">경주교촌마을</a></li>
+            <li><a href="https://www.gyeongju.go.kr/hwarang/index.do" target="_blank">화랑마을</a></li>
+            <li><a href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448" target="_blank">상상황리단길</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- footer contents -->
+      <div class="footer-contents">
+
+        <!-- footer top -->
+        <div class="top-contents">
+          <div class="site-info">
+            <ul>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+              </li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+              </li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="bottom-contents">
+          <div class="contents-wrapper">
+            <div class="footer-logo">
+              <a href="/main"><img src="../Project-images/footer/flogo.png" alt="로고"></a>
+            </div>
+            <div class="info-contents">
+              <div class="info">
+                <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                <span>대표전화 : 054-779-8585</span>
+                <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+              </div>
+              <ul class="icon-list">
+                <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
+                      src="../Project-images/footer/youtube.png" alt="유튜브"></a></li>
+                <li><a href="https://www.facebook.com/gj.tour1/"><img src="../Project-images/footer/facebook.png"
+                      alt="페이스북"></a></li>
+                <li><a href="https://blog.naver.com/gj_tour"><img src="../Project-images/footer/blog.png" alt="블로그"></a>
+                </li>
+                <li><a href="https://www.instagram.com/gj_tour/"><img src="../Project-images/footer/insta.png"
+                      alt="인스타그램"></a></li>
+              </ul>
+            </div>
+
+            <a
+              href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                src="../Project-images/footer/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+          </div>
+        </div>
+      </div>
+      <!-- footer contents 끝 -->
+
+    </footer>
+    <!-- footer 끝 -->
+    </div>
+    <!-- sctipt -->
+    <script src="script.js"></script>
+</body>
+
+</html>

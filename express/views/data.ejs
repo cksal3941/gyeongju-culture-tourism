@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATA</title>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@300&display=swap"
+    rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<!-- ejs파일은 무조건 views폴더 안에 넣어야 한다. -->
+
+<body>
+
+  <div class="title">
+    <h1>계정목록</h1>
+    <span><a href="/login">로그인</a></span>
+    <span><a href="/join">회원가입</a></span>
+  </div>
+
+  <main>
+    <% for(let i=0; i < log.length; i++){ %>
+      <div class="box-item">
+        <div class="info-box">
+          <!-- 고유 id값, 삭제버튼 -->
+          <p>
+            <%= log[i]._id %>
+          </p>
+          <h3><span>ID </span> : <%= log[i].id %>
+          </h3>
+          <h3><span>PW </span>: <%= log[i].pw %>
+          </h3>
+          <h3><span>NAME </span> : <%= log[i].name %>
+          </h3>
+        </div>
+
+        <div class="buttons">
+          <a href="/edit/<%= log[i]._id %>">
+            <button type="button" class="edit" data-id="<%= log[i]._id %>">수정</button>
+          </a>
+
+          <button type="button" class="delete" data-id="<%= log[i]._id %>">삭제</button>
+        </div>
+      </div>
+      <% } %>
+  </main>
+
+
+  <!------------ script ------------>
+  <script>
+
+    // Ajax로 삭제 요청하기(Delete)
+    // Ajax : 서버랑 통신할 수 있게 도와주는 JS문법
+    // Ajax 장점 : 새로고침 없이 서버에 요청할 수 있다.
+
+    $('.delete').on('click', function (e) {
+      // 삭제 버튼이 클릭된 해당 요소의 데이터가 삭제
+      let dataNum = e.target.dataset.id;
+      let curClick = $(this);
+
+      $.ajax({
+        // 3개의 값이 필요 (mothod, url, data)
+        // method : 서버에 새로고침 없이 delete로 요청
+        // url : '요청할 경로'
+        // data : 요청과 함께 보낼 데이터
+
+        method: 'DELETE',
+        url: '/delete',
+        data: { _id: dataNum }
+        // Ajax 요청이 성공 했을 때 실행할 코드(콜백함수)
+      }).done(function (result) {
+        console.log('요청 성공!');
+        // 클릭한 삭제버튼의 부모요소인 div박스를 fadeOut시켜라
+        curClick.parent().parent('.box-item').fadeOut();
+      })
+    })
+
+  </script>
+
+</body>
+
+</html>

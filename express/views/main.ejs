@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="경주문화관광">
+  <meta name="subject" content="경주시 문화관광 홈페이지입니다.">
+  <meta name="Keywords" content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행">
+  <meta name="description" content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다.">
+  <meta name="author" content="경주문화관광">
+  <title>경주문화관광</title>
+  <link rel="stylesheet" href="../main/style.css">
+  <!-- JQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <!-- font Awesome -->
+  <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Project-images/favicon_package_v0.16/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../Project-images/favicon_package_v0.16/favicon-16x16.png">
+  <link rel="manifest" href="../Project-images/favicon_package_v0.16/site.webmanifest">
+  <link rel="mask-icon" href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- slick slider -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header 시작 -->
+    <header>
+      <nav class="global-header">
+        <!-- 최상단 메뉴 -->
+        <!-- top버튼 넣어야됨 -->
+        <div class="top-menu">
+          <ul class="top-left-menu">
+            <li><a href="https://www.gyeongju.go.kr/open_content/ko/index.do" target="_blank">경주시청</a></li>
+            <li><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do" target="_blank">미디어자료관</a></li>
+          </ul>
+
+          <ul class="top-right-menu">
+            <!-- 매일 날짜 가져옴 -->
+            <li>
+              <span class="month"></span>.
+              <span class="date"></span>
+              (<span class="week"></span>)
+            </li>
+            <li class="weather"><span class="temp"></span>°C<span class="weather-icon"></span></li>
+            <li id="data"></li>
+            <li class="menu-img"><a href="">전체누리집 바로가기
+                <img src="../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+          </ul>
+        </div>
+
+        <div class="mainmenu">
+          <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
+          <h1>
+            <a href="#"><img src="../Project-images/header/white-logo.png" alt="사이트 로고">
+              <span>경주문화관광</span></a>
+          </h1>
+
+
+          <!-- 메인메뉴 list 안에 submenu 포함 -->
+          <ul class="mainmenu-list">
+            <li class="mainmenu-item"><a href="../travel_sub1/travel.html">경주여행</a>
+              <div class="submenu-list">
+                <!-- 경주여행 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="">권역별 관광지</a></li>
+                    <li><a href="../travel_sub1/travel.html">여행코스추천</a></li>
+                    <li><a href="">경주의 자연</a></li>
+                    <li><a href="">체험과 레저</a></li>
+                    <li><a href="">투어프로그램</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="submenu-back"></div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../festival_sub2/festival.html">문화행사</a>
+              <div class="submenu-list">
+                <!-- 문화행사 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="">이달의 축제 및 행사</a></li>
+                    <li><a href="../festival_sub2/festival.html">정기축제 행사안내</a></li>
+                    <li><a href="">공연전시 정보</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../culture_sub3/culture.html">문화재·역사</a>
+              <div class="submenu-list">
+                <!-- 문화재/역사 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="../culture_sub3/culture.html">세계문화유산</a></li>
+                    <li><a href="">경주의 역사</a></li>
+                    <li><a href="">분류별 국가유산</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="../food_sub4/food.html">음식·숙박·쇼핑</a>
+              <div class="submenu-list">
+                <!-- 음식/숙박/쇼핑 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="../food_sub4/food.html">음식</a></li>
+                    <li><a href="">숙박</a></li>
+                    <li><a href="">쇼핑</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="mainmenu-item"><a href="/map">여행도우미</a>
+              <div class="submenu-list">
+                <!-- 여행도우미 -->
+                <div class="submenu-left-img">
+                  <p></p>
+                </div>
+                <div class="ul-wrapper">
+                  <ul>
+                    <li><a href="/map">교통정보</a></li>
+                    <li><a href="">문화관광 해설사</a></li>
+                    <li><a href="">관광안내지도</a></li>
+                    <li><a href="">공중화장실</a></li>
+                    <li><a href="">경주관광코스</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="menu-buttons">
+            <ul>
+              <% if (info) { %>
+                <div class="login-name">
+                  <%= info.name %>님
+                </div>
+                <li class="logout"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+                <% } else { %>
+                  <li><a href="/login" class="login">로그인</a></li>
+                  <% } %>
+                    <!-- <li><a href="/login" class="login">로그인</a></li> -->
+                    <li class="login-home"><a href="/main"><img src="../Project-images/header/home-white.png"
+                          alt="메인페이지로 가기"></a></li>
+                    <li><a href="">
+                        <i class="fa-solid fa-bars hamberger"></i></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- 이미지 슬라이드 -->
+      <!-- 문제점 : 브라우저 화면 확대시 오른쪽에 여백이 생김 -->
+      <!-- 이미지 교체함, 몇개 선별해서 넣으면 될듯 -->
+      <div class="slider-wrapper">
+        <div class="slider">
+          <div class="img-item"><img src="../Project-images/header/slideImg/main1_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main2_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main3_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main4_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main5_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main6_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main7_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main8_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main9_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main10_1280x565.gif" alt=""></div>
+          <div class="img-item"><img src="../Project-images/header/slideImg/main11_1280x565.gif" alt=""></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main 시작 -->
+
+
+    <!-- section2 여행도우미 -->
+
+    <section class="section2">
+      <div class="section2-box">
+        <div class="section2-title">
+          <p><span>여행</span>도우미</p>
+          <p>경주여행에 도움이 되는 바로가기<br>
+            정보를 안내합니다</p>
+        </div>
+        <div class="help-list">
+          <ul>
+            <li><a href="/map"><img src="../Project-images/header/car.png" alt="교통정보자동차아이콘">
+                <p>교통정보</p>
+              </a></li>
+            <li><a href="/map"><img src="../Project-images/header/megaphone.png" alt="문화관광해설확성기아이콘">
+                <p>문화관광해설</p>
+              </a></li>
+            <li><a href="/map"><img src="../Project-images/header/address.png" alt="관광안내지도아이콘">
+                <p>관광안내지도</p>
+              </a></li>
+            <li><a href="/map"><img src="../Project-images/header/toilet.png" alt="공중화장실아이콘">
+                <p>교통정보</p>
+              </a></li>
+            <li><a href="/map"><img src="../Project-images/header/gyeongbokgung-palace.png" alt="경주관광코스아이콘">
+                <p>경주관광코스</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- section3 지도 -->
+
+    <section class="section3">
+      <!-- map section 시작 -->
+      <!-- 경주시내권 핵심코스 -->
+      <div class="tab-content show">
+        <div class="sec-left">
+          <h2 class="sec-tit">
+            <strong>경주여행<span>핵심코스</span></strong>
+            <p class="course">
+              경주문화관광이 추천하는 5가지<br>
+              경주여행테마코스!
+            </p>
+          </h2>
+
+
+          <!-- slide box-->
+          <div class="slide-out">
+
+            <div class="slide-wrap1 out">
+              <a href="" class="item" data-title="경주국립박물관">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item1-1.jpg" alt="경주국립박물관">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주시내권</span>
+                    <strong>
+                      <h2>핵심바이블</h2><i></i>국립경주박물관
+                    </strong>
+                    <p>신라문화를 한 눈에 볼 수 있는 국립경주박물관.<br>
+                      영롱한 자태의 금관을 생눈으로 마주할 수 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="월정교">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item1-2.jpg" alt="월정교">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주시내권</span>
+                    <strong>
+                      <h2>핵심바이블</h2><i></i>월정교
+                    </strong>
+                    <p>남천 위를 수놓고 선 그림 같은 목조교량 월정교.<br>
+                      원효대사와 요석공주의 사랑이야기가 얽힌 길.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="첨성대">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item1-3.jpg" alt="첨성대">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주시내권</span>
+                    <strong>
+                      <h2>핵심바이블</h2><i></i>첨성대
+                    </strong>
+                    <p> 신라의 역사가 이루어진 그 곳.<br>
+                      처음 지어진 모습 그대로 한 자리에 서 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="대릉원">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item1-4.jpg" alt="대릉원">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주시내권</span>
+                    <strong>
+                      <h2>핵심바이블</h2><i></i>대릉원
+                    </strong>
+                    <p>12만 6,500㎡의 넓은 땅에 고분이 모여 있는 곳.<br>
+                      대릉원을 중심으로 일대에 유적이 산재해 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="동궁과 월지">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item1-5.jpg" alt="동궁과 월지">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주시내권</span>
+                    <strong>
+                      <h2>핵심바이블</h2><i></i>동궁과 월지
+                    </strong>
+                    <p>경주야경 명소라는 타이틀이 아깝지 않은 곳.<br>
+                      동궁과 월지는 신라 조경예술의 극치를 보여준다.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide-wrap1 page2">
+              <a href="" class="item" data-title="경주동궁원">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item2-1.jpg" alt="경주동궁원">
+                  <div class="slide-txt">
+                    <span class="sub-txt">팔방미인</span>
+                    <strong>
+                      <h2>보문관광단지</h2><i></i>경주동궁원
+                    </strong>
+                    <p>동궁과 월지 이야기에서 모티프로 조성된<br>
+                      사계절 테마관광지 경주동궁원</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="보문정">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item2-2.jpg" alt="보문정">
+                  <div class="slide-txt">
+                    <span class="sub-txt">팔방미인</span>
+                    <strong>
+                      <h2>보문관광단지</h2><i></i>보문정
+                    </strong>
+                    <p>‘한국의 비경’이라 불리는 아름다운 풍광.<br>
+                      아담한 연못과 아름다운 정자가 있는 보문정.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="한국대중음악박물관">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item2-3.jpg" alt="한국대중음악박물관">
+                  <div class="slide-txt">
+                    <span class="sub-txt">팔방미인</span>
+                    <strong>
+                      <h2>보문관광단지</h2><i></i>한국대중음악박물관
+                    </strong>
+                    <p>한국대중음악의 역사를 망라해 놓은 전시관.<br>
+                      CNN에서 ‘한국에서 꼭 가보아야 할 곳’으로 선정.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="경주세계문화엑스포">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item2-4.jpg" alt="경주세계문화엑스포">
+                  <div class="slide-txt">
+                    <span class="sub-txt">팔방미인</span>
+                    <strong>
+                      <h2>보문관광단지</h2><i></i>경주세계문화엑스포
+                    </strong>
+                    <p>여덟 차례의 문화엑스포 행사를 치른 곳이다.<br>
+                      상설전시, 체험관이 다수 운영 중에 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="경주월드">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item2-5.jpg" alt="경주월드">
+                  <div class="slide-txt">
+                    <span class="sub-txt">팔방미인</span>
+                    <strong>
+                      <h2>보문관광단지</h2><i></i>경주월드
+                    </strong>
+                    <p>꿈, 사랑 행복의 경주월드!<br>
+                      국내에서 두 번째로 개장한 역사가 깊은 놀이공원.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide-wrap1 page3">
+              <a href="" class="item" data-title="불국사">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item3-1.jpg" alt="불국사">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주의 유네스코</span>
+                    <strong>
+                      <h2>세계문화유산</h2><i></i>불국사
+                    </strong>
+                    <p>우리나라를 대표하는 걸출한 문화유산.<br>
+                      불교교리를 건축물에 녹여낸 불국사.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="석굴암">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item3-2.jpg" alt="석굴암">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주의 유네스코</span>
+                    <strong>
+                      <h2>세계문화유산</h2><i></i>석굴암
+                    </strong>
+                    <p> 신라 불교 미술의 걸작 중 걸작.<br>
+                      신라 불교미술의 정수를 온 몸으로 보여주고 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="분황사">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item3-3.jpg" alt="분황사">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주의 유네스코</span>
+                    <strong>
+                      <h2>세계문화유산</h2><i></i>분황사
+                    </strong>
+                    <p>'향기로운(芬) 임금님(皇)의 절(寺)'<br>
+                      자장대사와 원효대사의 흔적이 있는 명찰.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="첨성대">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item3-4.jpg" alt="첨성대">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주의 유네스코</span>
+                    <strong>
+                      <h2>세계문화유산</h2><i></i>첨성대
+                    </strong>
+                    <p>동양에서 가장 오래된 천문대.<br>
+                      과학적인 의미가 숨어 있는 석축물이다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="대릉원">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item3-5.jpg" alt="대릉원">
+                  <div class="slide-txt">
+                    <span class="sub-txt">경주의 유네스코</span>
+                    <strong>
+                      <h2>세계문화유산</h2><i></i>대릉원
+                    </strong>
+                    <p>12만 6,500㎡의 넓은 땅에 고분이 모여 있는 곳.<br>
+                      대릉원을 중심으로 일대에 유적이 산재해 있다.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide-wrap1 page4">
+              <a href="" class="item" data-title="경주최부자댁">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item4-1.jpg" alt="경주최부자댁">
+                  <div class="slide-txt">
+                    <span class="sub-txt">신라 이후의 천년 경주</span>
+                    <strong>
+                      <h2>조선시대의 경주</h2><i></i>경주최부자댁
+                    </strong>
+                    <p>한국판 노블레스 오블리주의 상징.<br>
+                      ‘경주 최부자’의 종가댁.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="경주향교">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item4-2.jpg" alt="경주향교">
+                  <div class="slide-txt">
+                    <span class="sub-txt">신라 이후의 천년 경주</span>
+                    <strong>
+                      <h2>조선시대의 경주</h2><i></i>경주향교
+                    </strong>
+                    <p>천년의 배움터.<br>
+                      한반도 최초의 국립대학인 국학이 세워졌던 곳.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="석빙고">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item4-3.jpg" alt="석빙고">
+                  <div class="slide-txt">
+                    <span class="sub-txt">신라 이후의 천년 경주</span>
+                    <strong>
+                      <h2>조선시대의 경주</h2><i></i>석빙고
+                    </strong>
+                    <p>조선시대의 냉장고.<br>
+                      천여 개의 돌로 만들어진 얼음 창고.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="경주읍성">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item4-4.jpg" alt="경주읍성">
+                  <div class="slide-txt">
+                    <span class="sub-txt">신라 이후의 천년 경주</span>
+                    <strong>
+                      <h2>조선시대의 경주</h2><i></i>경주읍성
+                    </strong>
+                    <p>신라 이후의 천년 경주를 상징하는 주요 유적.<br>
+                      행정, 생활, 군사기능이 모여 있던 경주의 심장부.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="양동마을">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item4-5.jpg" alt="양동마을">
+                  <div class="slide-txt">
+                    <span class="sub-txt">신라 이후의 천년 경주</span>
+                    <strong>
+                      <h2>조선시대의 경주</h2><i></i>양동마을
+                    </strong>
+                    <p>세계문화유산에 등재된 한국의 역사마을.<br>
+                      고택과 초가가 조화롭게 자리하고 있다.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide-wrap1 page5">
+              <a href="" class="item" data-title="감은사지">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item5-1.jpg" alt="감은사지">
+                  <div class="slide-txt">
+                    <span class="sub-txt">유휴(you 休)!</span>
+                    <strong>
+                      <h2>경주바다에 머물다</h2><i></i>감은사지
+                    </strong>
+                    <p> 신문왕이 아버지 문무왕을 위해 세운 절.<br>
+                      멀리서도 눈에 확 띄는 석탑이 장대하게 서 있다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="문무대왕릉">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item5-2.jpg" alt="문무대왕릉">
+                  <div class="slide-txt">
+                    <span class="sub-txt">유휴(you 休)!</span>
+                    <strong>
+                      <h2>경주바다에 머물다</h2><i></i>문무대왕릉
+                    </strong>
+                    <p>바닷속 바위에 왕릉.<br>
+                      세계적으로 유례가 없는 유적.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="읍천항 벽화마을">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item5-3.jpg" alt="읍천항 벽화마을">
+                  <div class="slide-txt">
+                    <span class="sub-txt">유휴(you 休)!</span>
+                    <strong>
+                      <h2>경주바다에 머물다</h2><i></i>읍천항 벽화
+                    </strong>
+                    <p> 양남 주상절리 파도소리길의 출발점.<br>
+                      마을 곳곳에 벽화가 그려져 아름다움을 뽐낸다.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="송대말등대">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item5-4.jpg" alt="송대말등대">
+                  <div class="slide-txt">
+                    <span class="sub-txt">유휴(you 休)!</span>
+                    <strong>
+                      <h2>경주바다에 머물다</h2><i></i>송대말등대
+                    </strong>
+                    <p> ‘소나무가 펼쳐진 끝자락’<br>
+                      경주 동해안의 일출 명소로 손꼽히는 곳.</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="" class="item" data-title="감포항">
+                <div class="thum">
+                  <img src="../Project-images/section_map/item5-5.jpg" alt="감포항">
+                  <div class="slide-txt">
+                    <span class="sub-txt">유휴(you 休)!</span>
+                    <strong>
+                      <h2>경주바다에 머물다</h2><i></i>감포항
+                    </strong>
+                    <p>경주 최대의 항구 감포항.<br>
+                      유서깊은 항구답게 곳곳에 볼거리가 산재해 있다.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <!-- 지도 -->
+        <div class="map-img">
+          <img src="../Project-images/section_map/back1.png" alt="경주시내권 핵심코스 지도">
+        </div>
+      </div>
+
+
+      <!-- map section 끝 -->
+      <!-- tap section 시작-->
+      <div class="tab-wrap">
+        <div class="tab-back">
+          <ul class="tab-list">
+            <li class="tab-btn active">경주시내권 핵심코스</li>
+            <li class="tab-btn">보문관광단지 코스</li>
+            <li class="tab-btn">세계문화유산 코스</li>
+            <li class="tab-btn">천년경주 코스</li>
+            <li class="tab-btn">경주동해바다 코스</li>
+            <!-- 서브 페이지 연결 -->
+            <li><a class="link-btn" href="../travel_sub1/travel.html">여행지 더보기</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <main>
+
+      <!-- section 4 문화재 소개 -->
+
+      <section class="sction4">
+        <div class="section4-wrapper">
+          <p class="sec4-title title">문화재 소개</p>
+          <p class="sec4-subtitle">신라 천년의 고도, 경주의 문화재를 소개합니다</p>
+        </div>
+
+        <div class="image-list-wrapper">
+          <a href="../culture_sub3/culture.html">
+            <ul class="top-image-list">
+              <li><img src="../Project-images/section_culture/정혜사지13층석탑.jpg" alt="정혜사지13층석탑"></li>
+              <li><img src="../Project-images/section_culture/불국사 청운교 백운교.jpg" alt="불국사 청운교 백운교"></li>
+              <li><img src="../Project-images/section_culture/서악리귀부.jpg" alt="서악리귀부"></li>
+              <li><img src="../Project-images/section_culture/포석정.jpg" alt="포석정"></li>
+              <li><img src="../Project-images/section_culture/첨성대.jpg" alt="첨성대"></li>
+            </ul>
+            <ul class="bottom-image-list" dir="rtl">
+              <li><img src="../Project-images/section_culture/월정교.jpg" alt="월정교"></li>
+              <li><img src="../Project-images/section_culture/석굴암.jpg" alt="석굴암"></li>
+              <li><img src="../Project-images/section_culture/문무대왕릉 봉길해변.jpg" alt="문무대왕릉 봉길해변"></li>
+              <li><img src="../Project-images/section_culture/이견대.jpg" alt="이견대"></li>
+              <li><img src="../Project-images/section_culture/안압지.jpg" alt="안압지.jpg"></li>
+              <li><img src="../Project-images/section_culture/무열왕릉.jpg" alt="무열왕릉"></li>
+            </ul>
+          </a>
+        </div>
+
+      </section>
+      <!-- section 4 문화재 소개 끝 -->
+
+
+      <!-- section 5 축제ㆍ행사 -->
+      <section class="section5">
+        <div class="section5-wrapper">
+          <p class="sec5-title title"><a href="../festival_sub2/festival.html">축제ㆍ행사</a></p>
+          <div class="buttons">
+
+
+            <button type="button" class="fes-prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" class="fes-next">
+
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <ul class="poster-list">
+
+            <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&code_uid=300" target="_blank"><img
+                  src="../Project-images/section_festival/신라달빛기행.jpg" alt="신라달빛기행 포스터"></a></li>
+            <li><a href="https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2393&con_uid=7189" target="_blank"><img
+                  src="../Project-images/section_festival/천태만상.jpg" alt="천태만상 포스터"></a></li>
+            <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7207&cmd=2" target="_blank"><img
+                  src="../Project-images/section_festival/국공립극단페스티벌.jpg" alt="국공립극단페스티벌 포스터"></a></li>
+            <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7168&cmd=2" target="_blank"><img
+                  src="../Project-images/section_festival/아트&마켓1918.jpg" alt="아트&마켓1918 포스터"></a></li>
+            <li><a
+                href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7175&cmd=2"
+                target="_blank"><img src="../Project-images/section_festival/봉황대.jpg" alt="봉황대 포스터"></a></li>
+            <li><a
+                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015243&schedCateCd="
+                target="_blank"><img src="../Project-images/section_festival/토우의어린이음악회.jpg" alt="토우의어린이음악회 포스터"></a>
+            </li>
+            <li><a
+                href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7148&cmd=2"
+                target="_blank"><img src="../Project-images/section_festival/경주벚꽃축제.jpg" alt="경주벚꽃축제 포스터"></a></li>
+            <li><a
+                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015573&schedCateCd="
+                target="_blank"><img src="../Project-images/section_festival/지브리.jpg" alt="지브리 포스터"></a></li>
+            <li><a
+                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000014672"
+                target="_blank"><img src="./../Project-images/section_festival/경북실내악.jpg" alt="경북실내악 포스터"></a></li>
+            <li><a
+                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000014873"
+                target="_blank"><img src="./../Project-images/section_festival/유키구라모토.jpg" alt="유키구라모토 포스터"></a></li>
+            <li><a
+                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000014870&schedCateCd="
+                target="_blank"><img src="./../Project-images/section_festival/조성진.jpg" alt="조성진 포스터"></a></li>
+
+          </ul>
+
+          <div class="slide-btn"></div>
+        </div>
+
+      </section>
+      <!-- section 5 축제ㆍ행사 끝 -->
+
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+
+      <!-- banner -->
+      <div class="banners">
+        <div class="banner-contents">
+          <div class="banner-list">
+            <h2>배너모음</h2>
+            <div class="banner-btn-list">
+              <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+              <div class="stop-play">
+                <button type="button" class="first"><i class="fa-solid fa-pause stop"></i></button>
+                <button type="button" class="second"><i class="fa-solid fa-play play"></i></button>
+              </div>
+
+              <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+
+          <ul class="banner-site-list">
+            <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+            <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+            <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027" target="_blank">토함산자연휴양림</a>
+            </li>
+            <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+            <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+            <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+            <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+            <li><a href="https://www.gyeongju.go.kr/gyochon/index.do" target="_blank">경주교촌마을</a></li>
+            <li><a href="https://www.gyeongju.go.kr/hwarang/index.do" target="_blank">화랑마을</a></li>
+            <li><a href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448" target="_blank">상상황리단길</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- footer contents -->
+      <div class="footer-contents">
+
+        <!-- footer top -->
+        <div class="top-contents">
+          <div class="site-info">
+            <ul>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+              </li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+              </li>
+              <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="bottom-contents">
+          <div class="contents-wrapper">
+            <div class="footer-logo">
+              <a href="../main/index.html"><img src="../Project-images/footer/flogo.png" alt="로고"></a>
+            </div>
+            <div class="info-contents">
+              <div class="info">
+                <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                <span>대표전화 : 054-779-8585</span>
+                <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+              </div>
+              <ul class="icon-list">
+                <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
+                      src="../Project-images/footer/youtube.png" alt="유튜브"></a></li>
+                <li><a href="https://www.facebook.com/gj.tour1/"><img src="../Project-images/footer/facebook.png"
+                      alt="페이스북"></a></li>
+                <li><a href="https://blog.naver.com/gj_tour"><img src="../Project-images/footer/blog.png" alt="블로그"></a>
+                </li>
+                <li><a href="https://www.instagram.com/gj_tour/"><img src="../Project-images/footer/insta.png"
+                      alt="인스타그램"></a></li>
+              </ul>
+            </div>
+
+            <a
+              href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                src="../Project-images/footer/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+          </div>
+        </div>
+      </div>
+      <!-- footer contents 끝 -->
+
+    </footer>
+    <!-- footer 끝 -->
+
+
+
+
+  </div>
+
+
+  </div>
+  <script src="./js/header_footer.js"></script>
+  <script src="./js/secion_map.js"></script>
+  <script src="./js/section_cul_fes.js"></script>
+  <script src="./js/API.js"></script>
+</body>
+
+</html>

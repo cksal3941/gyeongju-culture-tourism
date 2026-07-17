@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="경주문화관광">
+    <meta name="subject" content="경주시 문화관광 홈페이지입니다.">
+    <meta name="Keywords" content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행">
+    <meta name="description" content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다.">
+    <meta name="author" content="경주문화관광">
+    <title>회원가입</title>
+    <!-- font Awesome -->
+    <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+    <!------ Google Font ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../Project-images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../Project-images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="../../Project-images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="../../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- slickslider -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 우편번호 api -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- header -->
+        <header>
+            <nav class="global-header">
+                <!-- 최상단 메뉴 -->
+                <!-- top버튼 넣어야됨 -->
+                <div class="top-menu">
+                    <ul class="top-left-menu">
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/index.do" target="_blank">경주시청</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do" target="_blank">미디어자료관</a></li>
+                    </ul>
+
+                    <ul class="top-right-menu">
+                        <!-- 매일 날짜 가져옴 -->
+                        <li>
+                            <span class="month"></span>.
+                            <span class="date"></span>
+                            (<span class="week"></span>)
+                        </li>
+                        <li class="weather"><span class="temp"></span>°C<span class="weather-icon"></span></li>
+                        <li id="data"></li>
+                        <li class="menu-img"><a href="">전체누리집 바로가기
+                                <img src="../../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+                    </ul>
+                </div>
+
+                <div class="mainmenu">
+                    <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
+                    <h1>
+                        <a href="../../main/index.html"><img src="../../Project-images/header/white-logo.png"
+                                alt="사이트 로고">
+                            <span>경주문화관광</span></a>
+                    </h1>
+
+
+                    <!-- 메인메뉴 list 안에 submenu 포함 -->
+                    <ul class="mainmenu-list">
+                        <li class="mainmenu-item"><a href="../../travel_sub1/travel.html">경주여행</a>
+                            <div class="submenu-list">
+                                <!-- 경주여행 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="">권역별 관광지</a></li>
+                                        <li><a href="../../travel_sub1/travel.html">여행코스추천</a></li>
+                                        <li><a href="">경주의 자연</a></li>
+                                        <li><a href="">체험과 레저</a></li>
+                                        <li><a href="">투어프로그램</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="submenu-back"></div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../../festival_sub2/festival.html">문화행사</a>
+                            <div class="submenu-list">
+                                <!-- 문화행사 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="">이달의 축제 및 행사</a></li>
+                                        <li><a href="../../festival_sub2/festival.html">정기축제 행사안내</a></li>
+                                        <li><a href="">공연전시 정보</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../../culture_sub3/culture.html">문화재·역사</a>
+                            <div class="submenu-list">
+                                <!-- 문화재/역사 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="../../culture_sub3/culture.html">세계문화유산</a></li>
+                                        <li><a href="">경주의 역사</a></li>
+                                        <li><a href="">분류별 국가유산</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../../food_sub4/food.html">음식·숙박·쇼핑</a>
+                            <div class="submenu-list">
+                                <!-- 음식/숙박/쇼핑 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="../../food_sub4/food.html">음식</a></li>
+                                        <li><a href="">숙박</a></li>
+                                        <li><a href="">쇼핑</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mainmenu-item"><a href="../../tripHelper_sub5/tripHelper.html">여행도우미</a>
+                            <div class="submenu-list">
+                                <!-- 여행도우미 -->
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
+                                <div class="ul-wrapper">
+                                    <ul>
+                                        <li><a href="../../tripHelper_sub5/travel.html">교통정보</a></li>
+                                        <li><a href="">문화관광 해설사</a></li>
+                                        <li><a href="">관광안내지도</a></li>
+                                        <li><a href="">공중화장실</a></li>
+                                        <li><a href="">경주관광코스</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="menu-buttons">
+                        <ul>
+                            <li><a href="../login/login.html" class="login">로그인</a></li>
+                            <li><a href="../../main/index.html"><img src="../../Project-images/header/home-white.png"
+                                        alt="메인페이지로 가기"></a></li>
+                            <li><a href="">
+                                    <i class="fa-solid fa-bars hamberger"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+            <!-- header-img -->
+            <div class="header-img">
+                <img src="../../Project-images/section_culture/첨성대.jpg" alt="">
+                <p>회원가입</p>
+            </div>
+        </header>
+        <!-- gnb-nav -->
+        <div class="gnb-nav">
+            <div class="gnb-nav-section">
+                <div class="home-section">
+                    <h2 class="home-btn"><a href=""><img src="../../Project-images/header/home-white.png" alt="홈버튼"></a>
+                    </h2>
+                </div>
+                <ul>
+                    <li class="gnb-list"><a href="">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- main -->
+        <main>
+            <section class="title">
+                <p class="title1">회원가입</p>
+                <p class="title2">회원가입에 필요한 정보를 입력해주세요.</p>
+            </section>
+
+            <section class="table-section">
+
+                <form action="/join" id="signup-form" method="POST">
+                    <table>
+                        <!-- 아이디 -->
+                        <tr>
+                            <th>
+                                <label for="id">
+                                    <span class="marking">*</span>회원아이디</label>
+                            </th>
+                            <td class="inputbox id">
+                                <input type="text" name="id" id="id">
+                                <button type="button" class="btn-primary">중복확인</button>
+                                <span class="warn"></span>
+                            </td>
+                        </tr>
+
+                        <!-- 비번 -->
+                        <tr>
+                            <th>
+                                <label for="pw">
+                                    <span class="marking">*</span>비밀번호</label>
+                            </th>
+                            <td class="inputbox ">
+                                <div class="userpw">
+                                    <input type="password" name="pw" id="pw">
+                                    <span class="warn pw-warn"></span>
+                                    <!-- 안전 or 사용불가 텍스트 -->
+                                    <span class="pw-text"></span>
+                                    <!-- 자물쇠 이미지 -->
+                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- 비번확인 -->
+                        <tr>
+                            <th>
+                                <label for="pw-chk">
+                                    <span class="marking">*</span>비밀번호확인</label>
+                            </th>
+                            <td class="inputbox">
+                                <div class="userpw-chk">
+                                    <input type="password" name="pw-chk" id="pw-chk">
+                                    <span class="warn pw-warn"></span>
+                                    <!-- 안전 or 사용불가 텍스트 -->
+                                    <span class="pw-text"></span>
+                                    <!-- 자물쇠 이미지 -->
+                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- 이름 -->
+                        <tr>
+                            <th>
+                                <label for="name">
+                                    <span class="marking">*</span>이름</label>
+                            </th>
+                            <td class="inputbox username">
+                                <input type="text" name="name" id="name">
+                                <span class="warn"></span>
+
+                            </td>
+                        </tr>
+
+                        <!-- 이메일 -->
+                        <tr>
+                            <th>
+                                <label for="mail">
+                                    <span class="marking">*</span>이메일</label>
+                            </th>
+                            <td class="inputbox usermail">
+                                <input type="text" name="mail" id="mail">
+
+                                <span class="warn"></span>
+                            </td>
+                        </tr>
+
+                        <!-- 성별 -->
+                        <tr>
+                            <th>
+                                <label for="gender">성별</label>
+                            </th>
+                            <td class="inputbox gender">
+                                <div>
+                                    <input type="radio" name="gender" value="0" id="male" checked><label
+                                        for="male">남성</label>
+                                    <input type="radio" name="gender" value="1" id="female"><label
+                                        for="female">여성</label>
+                                    <input type="radio" name="gender" value="2" id="none"><label for="none">선택안함</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- 연락처 -->
+                        <tr>
+                            <th>
+                                <label for="phonenum1">
+                                    <span class="marking">*</span>연락처</label>
+                            </th>
+                            <td class="inputbox phone">
+                                <select name="phonenum1" id="phonenum1" class="phone1" onchange="getPhone()">
+                                    <option name=" phonenum1" value="010">010</option>
+                                    <option name="phonenum1" value="011">011</option>
+                                    <option name="phonenum1" value="016">016</option>
+                                    <option name="phonenum1" value="017">017</option>
+                                    <option name="phonenum1" value="018">018</option>
+                                    <option name="phonenum1" value="019">019</option>
+                                </select>
+                                <span class="hyphen">-</span>
+                                <input type="text" name="phonenum2" maxlength="4" class="phone2">
+                                <span class="hyphen">-</span>
+                                <input type="text" name="phonenum3" maxlength="4" class="phone3">
+                                <span class="warn">해당 연락처는 아이디 비밀번호 찾기시 이용합니다.</span>
+                            </td>
+                        </tr>
+
+                        <!-- 주소 -->
+                        <tr>
+                            <th>
+                                <label for="sample6_postcode">주소</label>
+                            </th>
+                            <td>
+                                <div class=" inputbox address">
+                                    <input id="sample6_postcode" type="text" placeholder="우편번호">
+                                    <button onclick="sample6_execDaumPostcode()" type="button" class="btn-primary">우편번호
+                                        찾기</button>
+                                    <div class=" inputbox addr-detail">
+                                        <input id="sample6_address" type="text" placeholder="주소">
+                                        <input id="sample6_detailAddress" type="text" placeholder="상세주소"> <!--상세 주소-->
+                                        <input id="sample6_extraAddress" type="text" placeholder="참고항목">
+                                        <!--참고 항목, 숨김처리-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- 버튼 -->
+                    <section class="buttons">
+                        <button type="button" id="main">회원탈퇴</button>
+                        <button type="submit" id="submit">회원가입</button>
+                    </section>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- banner -->
+        <div class="banners">
+            <div class="banner-contents">
+                <div class="banner-list">
+                    <h2>배너모음</h2>
+                    <div class="banner-btn-list">
+                        <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+                        <div class="stop-play">
+                            <button type="button" class="first"><i class="fa-solid fa-pause stop"></i></button>
+                            <button type="button" class="second"><i class="fa-solid fa-play play"></i></button>
+                        </div>
+
+                        <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+
+                <ul class="banner-site-list">
+                    <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+                    <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+                    <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
+                            target="_blank">토함산자연휴양림</a>
+                    </li>
+                    <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+                    <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+                    <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+                    <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+                    <li><a href="https://www.gyeongju.go.kr/gyochon/index.do" target="_blank">경주교촌마을</a></li>
+                    <li><a href="https://www.gyeongju.go.kr/hwarang/index.do" target="_blank">화랑마을</a></li>
+                    <li><a href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448" target="_blank">상상황리단길</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- footer contents -->
+        <div class="footer-contents">
+
+            <!-- footer top -->
+            <div class="top-contents">
+                <div class="site-info">
+                    <ul>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+                        </li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+                        </li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- footer bottom -->
+            <div class="bottom-contents">
+                <div class="contents-wrapper">
+                    <div class="footer-logo">
+                        <a href="../../main/index.html"><img src="../../Project-images/footer/flogo.png" alt="로고"></a>
+                    </div>
+                    <div class="info-contents">
+                        <div class="info">
+                            <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                            <span>대표전화 : 054-779-8585</span>
+                            <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+                        </div>
+                        <ul class="icon-list">
+                            <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
+                                        src="../../Project-images/footer/youtube.png" alt="유튜브"></a></li>
+                            <li><a href="https://www.facebook.com/gj.tour1/"><img
+                                        src="../../Project-images/footer/facebook.png" alt="페이스북"></a></li>
+                            <li><a href="https://blog.naver.com/gj_tour"><img src="../../Project-images/footer/blog.png"
+                                        alt="블로그"></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/gj_tour/"><img
+                                        src="../../Project-images/footer/insta.png" alt="인스타그램"></a></li>
+                        </ul>
+                    </div>
+
+                    <a
+                        href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                            src="../../Project-images/footer/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+                </div>
+            </div>
+        </div>
+        <!-- footer contents 끝 -->
+
+    </footer>
+    <!-- footer 끝 -->
+    <script src="script.js"></script>
+</body>
+
+</html>

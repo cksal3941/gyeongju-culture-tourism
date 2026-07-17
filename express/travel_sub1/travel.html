@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="경주문화관광" />
+    <meta name="subject" content="경주시 문화관광 홈페이지입니다." />
+    <meta
+      name="Keywords"
+      content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행"
+    />
+    <meta
+      name="description"
+      content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다."
+    />
+    <meta name="author" content="경주문화관광" />
+    <title>경주여행 핵심코스</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <!-- font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9b527152d1.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Project-images/favicon_package_v0.16/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Project-images/favicon_package_v0.16/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Project-images/favicon_package_v0.16/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="../Project-images/favicon_package_v0.16/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- slickslider -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header -->
+      <header>
+        <nav class="global-header">
+          <!-- 최상단 메뉴 -->
+          <!-- top버튼 넣어야됨 -->
+          <div class="top-menu">
+            <ul class="top-left-menu">
+              <li>
+                <a
+                  href="https://www.gyeongju.go.kr/open_content/ko/index.do"
+                  target="_blank"
+                  >경주시청</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.gyeongju.go.kr/gyeongjuimage/index.do"
+                  target="_blank"
+                  >미디어자료관</a
+                >
+              </li>
+            </ul>
+
+            <ul class="top-right-menu">
+              <!-- 매일 날짜 가져옴 -->
+              <li>
+                <span class="month"></span>.
+                <span class="date"></span>
+                (<span class="week"></span>)
+              </li>
+              <li class="weather">
+                <span class="temp"></span>°C<span class="weather-icon"></span>
+              </li>
+              <li id="data"></li>
+              <li class="menu-img">
+                <a href=""
+                  >전체누리집 바로가기
+                  <img
+                    src="../Project-images/header/topIcon_white.png"
+                    alt="전체누리집 바로가기 아이콘"
+                /></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mainmenu">
+            <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
+            <h1>
+              <a href="/main"
+                ><img
+                  src="../Project-images/header/white-logo.png"
+                  alt="사이트 로고"
+                />
+                <span>경주문화관광</span></a
+              >
+            </h1>
+
+            <!-- 메인메뉴 list 안에 submenu 포함 -->
+            <ul class="mainmenu-list">
+              <li class="mainmenu-item">
+                <a href="../travel_sub1/travel.html">경주여행</a>
+                <div class="submenu-list">
+                  <!-- 경주여행 -->
+                  <div class="submenu-left-img">
+                    <p></p>
+                  </div>
+                  <div class="ul-wrapper">
+                    <ul>
+                      <li><a href="">권역별 관광지</a></li>
+                      <li>
+                        <a href="../travel_sub1/travel.html">여행코스추천</a>
+                      </li>
+                      <li><a href="">경주의 자연</a></li>
+                      <li><a href="">체험과 레저</a></li>
+                      <li><a href="">투어프로그램</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="submenu-back"></div>
+              </li>
+
+              <li class="mainmenu-item">
+                <a href="../festival_sub2/festival.html">문화행사</a>
+                <div class="submenu-list">
+                  <!-- 문화행사 -->
+                  <div class="submenu-left-img">
+                    <p></p>
+                  </div>
+                  <div class="ul-wrapper">
+                    <ul>
+                      <li><a href="">이달의 축제 및 행사</a></li>
+                      <li>
+                        <a href="../festival_sub2/festival.html"
+                          >정기축제 행사안내</a
+                        >
+                      </li>
+                      <li><a href="">공연전시 정보</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="mainmenu-item">
+                <a href="../culture_sub3/culture.html">문화재·역사</a>
+                <div class="submenu-list">
+                  <!-- 문화재/역사 -->
+                  <div class="submenu-left-img">
+                    <p></p>
+                  </div>
+                  <div class="ul-wrapper">
+                    <ul>
+                      <li>
+                        <a href="../culture_sub3/culture.html">세계문화유산</a>
+                      </li>
+                      <li><a href="">경주의 역사</a></li>
+                      <li><a href="">분류별 국가유산</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="mainmenu-item">
+                <a href="../food_sub4/food.html">음식·숙박·쇼핑</a>
+                <div class="submenu-list">
+                  <!-- 음식/숙박/쇼핑 -->
+                  <div class="submenu-left-img">
+                    <p></p>
+                  </div>
+                  <div class="ul-wrapper">
+                    <ul>
+                      <li><a href="../food_sub4/food.html">음식</a></li>
+                      <li><a href="">숙박</a></li>
+                      <li><a href="">쇼핑</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="mainmenu-item">
+                <a href="/map">여행도우미</a>
+                <div class="submenu-list">
+                  <!-- 여행도우미 -->
+                  <div class="submenu-left-img">
+                    <p></p>
+                  </div>
+                  <div class="ul-wrapper">
+                    <ul>
+                      <li><a href="/map">교통정보</a></li>
+                      <li><a href="">문화관광 해설사</a></li>
+                      <li><a href="">관광안내지도</a></li>
+                      <li><a href="">공중화장실</a></li>
+                      <li><a href="">경주관광코스</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="menu-buttons">
+              <ul>
+                <li><a href="/login" class="login">로그인</a></li>
+                <li>
+                  <a href="/main"
+                    ><img
+                      src="../Project-images/header/home-white.png"
+                      alt="메인페이지로 가기"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""> <i class="fa-solid fa-bars hamberger"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- header-img -->
+        <div class="header-img">
+          <img
+            src="../Project-images/subpage1(경주여행)/header-main.jpg"
+            alt="여행헤더이미지"
+          />
+          <p>경주여행</p>
+        </div>
+      </header>
+      <!-- gnb-nav -->
+      <div class="gnb-nav">
+        <div class="gnb-nav-section">
+          <div class="home-section">
+            <h2 class="home-btn">
+              <a href="/main"
+                ><img
+                  src="../Project-images/header/home-white.png"
+                  alt="홈버튼"
+              /></a>
+            </h2>
+          </div>
+          <ul>
+            <li class="gnb-list">
+              <a href="">경주여행</a>
+              <ul>
+                <li><a href="../travel_sub1/travel.html">경주여행</a></li>
+                <li><a href="../festival_sub2/festival.html">문화행사</a></li>
+                <li><a href="../culture_sub3/culture.html">문화재·역사</a></li>
+                <li><a href="../food_sub4/food.html">음식·숙박·쇼핑</a></li>
+                <li><a href="/map">여행도우미</a></li>
+              </ul>
+            </li>
+            <li class="gnb-list">
+              <a href="">여행코스추천</a>
+              <ul>
+                <li><a href="">권역별 관광지</a></li>
+                <li><a href="">여행코스추천</a></li>
+                <li><a href="">경주의 자연</a></li>
+                <li><a href="">체험과 레저</a></li>
+                <li><a href="">투어프로그램</a></li>
+              </ul>
+            </li>
+            <li class="gnb-list">
+              <a href="">경주여행핵심코스</a>
+              <ul>
+                <li><a href="">경주여행핵심코스</a></li>
+                <li><a href="">나의두번째경주</a></li>
+                <li><a href="">자박자박 경주걷기</a></li>
+                <li><a href="">두바퀴로 누비는 경주</a></li>
+                <li><a href="">버스타고 경주여행</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- main -->
+
+      <main>
+        <!-- main-mav 서브리스트 -->
+        <div class="main-nav">
+          <p>경주여행핵심코스</p>
+          <ul>
+            <li class="arrow">
+              <a href="/main"
+                ><img
+                  src="../Project-images/header/home-black.png"
+                  alt="홈아이콘"
+              /></a>
+            </li>
+            <li class="arrow">경주여행</li>
+            <li class="arrow">여행코스추천</li>
+            <li class="line">경주여행핵심코스</li>
+            <li class="icon">
+              <img src="../Project-images/header/ilnk.png" alt="링크아이콘" />
+            </li>
+            <li class="icon">
+              <img src="../Project-images/header/copy.png" alt="복사아이콘" />
+            </li>
+            <li class="icon">
+              <img src="../Project-images/header/print.png" alt="인쇄아이콘" />
+            </li>
+          </ul>
+        </div>
+        <!-- section titles -->
+        <section class="title">
+          <p>경주 시내권 핵심 바이블</p>
+
+          <div class="sub-title1">
+            <ul>
+              <li class="active">경주 시내권 핵심 바이블</li>
+              <li>팔방미인 보문관광단지 여행</li>
+              <li>경주의 세계문화유네스코를 찾아서</li>
+              <li>신라 이후 천년경주</li>
+              <li>유휴(You 休)!경주 바다에 머물다</li>
+            </ul>
+          </div>
+
+          <div class="m-img"></div>
+
+          <div class="sub-title2">
+            <div class="titles">
+              <p class="sub-title">여행코스설명</p>
+              <p class="blue">
+                #시내권핵심코스 #느긋한코스 #시내권도보여행 #시내권자전거여행
+              </p>
+            </div>
+            <p>
+              당일치기 여행, 혹은 짧은 1박2일 여행을 계획하고 있는 이들에게
+              추천한다. 반경 3킬로미터 이내에 모든 여행지가 모여 있다. 느긋하게
+              쉬어가며 도보여행하거나, 경주의 정취를 만끽하며 자전거여행하기
+              안성맞춤인 코스. 경주를 더 보고 싶은 욕심이 생긴다면, 이 시내권
+              핵심바이블 코스에 불국사나 보문단지권 여행 스팟을 한 두 곳
+              추가해도 좋다.
+            </p>
+          </div>
+
+          <div class="corse">
+            <p class="sub-title">코스제안</p>
+            <p class="blue">1일차</p>
+            <ul>
+              <li class="corse-arrow"><span>1</span>국립경주박물관</li>
+              <li class="corse-arrow"><span>2</span>월정교</li>
+              <li class="corse-arrow"><span>3</span>첨성대</li>
+              <li class="corse-arrow"><span>4</span>대릉원</li>
+              <li class="corse-arrow"><span>5</span>동궁과 월지</li>
+            </ul>
+            <p class="blue">2일차</p>
+            <ul>
+              <li class="corse-arrow"><span>1</span>월성발굴현장</li>
+              <li class="corse-arrow"><span>2</span>황리단길</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- section slide -->
+
+        <section class="slide">
+          <div class="slide-box">
+            <ul class="slide-imgs">
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide1.jpg"
+                  alt="슬라이드이미지1"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide2.jpg"
+                  alt="슬라이드이미지2"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide3.jpg"
+                  alt="슬라이드이미지3"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide4.jpg"
+                  alt="슬라이드이미지4"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide5.jpg"
+                  alt="슬라이드이미지5"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide6.jpg"
+                  alt="슬라이드이미지6"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide7.jpg"
+                  alt="슬라이드이미지7"
+                />
+              </li>
+              <li>
+                <img
+                  src="../Project-images/subpage1(경주여행)/slide8.jpg"
+                  alt="슬라이드이미지8"
+                />
+              </li>
+            </ul>
+            <div class="buttons">
+              <p class="dot-num">
+                <span class="num"></span><span class="end">/8</span>
+              </p>
+              <button type="button" id="prev">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" id="pause">| |</button>
+              <button type="button" id="play">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button type="button" id="next">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-box">
+            <p class="sub-title">국립경주박물관</p>
+            <p class="s-blue">
+              #국립경주박물관#신라역사#국보급유물관람#아이와함께#실내데이트
+            </p>
+            <ul>
+              <li>
+                <span>주소</span>경상북도 경주시 일정로 186, 국립경주박물관
+                (인왕동)
+              </li>
+              <li><span>전화번호</span>054-740-7500</li>
+              <li>
+                <span>홈페이지</span
+                ><a href="https://gyeongju.museum.go.kr/" target="_blank"
+                  >https://gyeongju.museum.go.kr/</a
+                >
+              </li>
+              <li>
+                <span>관람시간</span>매일 10:00 - 18:00 / 일요일, 공휴일 10:00 -
+                19:00
+              </li>
+              <li>
+                <span>야간연장개관</span>10:00 - 21:00 ( 매월 마지막 주 수요일,
+                3~12월 매주 토요일 )
+              </li>
+              <li><span>정기휴관일</span>1월 1일, 설날, 추석</li>
+              <li><span>관람료</span>무료</li>
+              <li><span>주차정보</span>전용 주차장(무료)이용</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- section info -->
+
+        <section class="inform">
+          <div class="info-box">
+            <ul class="info-list">
+              <li class="content active">상세정보</li>
+              <li>길찾기 및 주변정보</li>
+              <li class="photo">사진/영상</li>
+              <li>리뷰</li>
+            </ul>
+
+            <div class="info-content">
+              국립경주박물관에서는 압축된 신라 천년의 역사를 살펴볼 수 있다.<br />
+              경주 여행을 할 때에 첫 번째 행선지로 들러 미리 공부한 뒤 곳곳의
+              문화유산을 만나면 알찬 여행이 될 것이다.<br />
+              박물관은 대표전시관인 신라역사관을 비롯해 신라미술관, 월지관 등의
+              상설전시관 3관과 기획전시가 열리는 특별전시관으로 크게
+              구성된다.<br /><br />
+
+              신라역사관에는 신라의 건국부터 멸망까지 일련의 역사를 4실로 나누어
+              전시했다.<br />
+              수준 높은 신라 불교 미술에 대해 알아보고 싶다면 신라미술관으로
+              향하자.<br />
+              월지관은 동궁과월지의 발굴조사를 토대로 출토 유물을 정리해둔
+              전시관이다.<br />
+              동궁과 월지 복원모형을 비롯해 월지에서 출토된 나무배,
+              금동판삼존불좌상과 같은 귀한 유물을 만날 수 있다.<br />
+              상설전시관 세 곳에서는 정해진 시간마다 전시해설 프로그램을 운영
+              중이니 박물관 관람 전 시간표를 확인하고 해설을 들으며 전시관
+              관람을 하는 것도 좋은 방법이다.<br /><br />
+
+              국립전시관에서 놓치지 말아야 할 포인트 하나가 더 있다.<br />
+              국보급 문화재가 박물관 마당에 있다.<br />
+              야외전시장을 둘러보며 성덕대왕 신종과 고선사지삼층석탑 등 귀한
+              유물을 챙겨 보자.<br /><br />
+
+              국립경주박물관 바로 옆에 올해(2019) 5월, 영남권 수장고가 문을
+              열었다.<br />
+              이곳은 영남지역에서 발굴한 매장문화재 60여만 점을 체계적으로
+              보관하고자 건립한 수장고이다.<br />
+              신라 토기와 기와 등 주요 유적 출토품 3,000여점을 전시한
+              전시수장고와 문화재발굴과 보존, 복원 등에 대해 알아볼 수 있는
+              로비전시실을 관람할 수 있다.<br /><br />
+            </div>
+
+            <div class="info-photo">
+              <ul>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide1.jpg"
+                    alt="슬라이드1"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide2.jpg"
+                    alt="슬라이드2"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide3.jpg"
+                    alt="슬라이드3"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide4.jpg"
+                    alt="슬라이드4"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide5.jpg"
+                    alt="슬라이드5"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide6.jpg"
+                    alt="슬라이드6"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide7.jpg"
+                    alt="슬라이드7"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="../Project-images/subpage1(경주여행)/slide8.jpg"
+                    alt="슬라이드8"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- main 끝 -->
+
+      <!-- footer -->
+      <footer>
+        <!-- banner -->
+        <div class="banners">
+          <div class="banner-contents">
+            <div class="banner-list">
+              <h2>배너모음</h2>
+              <div class="banner-btn-list">
+                <button type="button" class="prev">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="stop-play">
+                  <button type="button" class="first">
+                    <i class="fa-solid fa-pause stop"></i>
+                  </button>
+                  <button type="button" class="second">
+                    <i class="fa-solid fa-play play"></i>
+                  </button>
+                </div>
+
+                <button type="button" class="next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <ul class="banner-site-list">
+              <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+              <li>
+                <a href="http://www.cultureexpo.or.kr/" target="_blank"
+                  >경주세계엑스포</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
+                  target="_blank"
+                  >토함산자연휴양림</a
+                >
+              </li>
+              <li>
+                <a href="http://yangdong.invil.org/" target="_blank"
+                  >경주양동마을</a
+                >
+              </li>
+              <li>
+                <a href="http://www.dmgyeongju.com/" target="_blank"
+                  >동리목월문학관</a
+                >
+              </li>
+              <li>
+                <a href="http://gjsam.or.kr/ko/" target="_blank"
+                  >경주솔거미술관</a
+                >
+              </li>
+              <li>
+                <a href="http://www.gjtour.or.kr/" target="_blank"
+                  >경주농촌체험관광</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.gyeongju.go.kr/gyochon/index.do"
+                  target="_blank"
+                  >경주교촌마을</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.gyeongju.go.kr/hwarang/index.do"
+                  target="_blank"
+                  >화랑마을</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448"
+                  target="_blank"
+                  >상상황리단길</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer contents -->
+        <div class="footer-contents">
+          <!-- footer top -->
+          <div class="top-contents">
+            <div class="site-info">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&"
+                    >개인정보처리방침</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&"
+                    >이용약관</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&"
+                    >저작권안내</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807"
+                    >관광불편신고</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- footer bottom -->
+          <div class="bottom-contents">
+            <div class="contents-wrapper">
+              <div class="footer-logo">
+                <a href="/main"
+                  ><img src="../Project-images/footer/flogo.png" alt="로고"
+                /></a>
+              </div>
+              <div class="info-contents">
+                <div class="info">
+                  <span
+                    >[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span
+                  >
+                  <span>대표전화 : 054-779-8585</span>
+                  <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+                </div>
+                <ul class="icon-list">
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"
+                      ><img
+                        src="../Project-images/footer/youtube.png"
+                        alt="유튜브"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/gj.tour1/"
+                      ><img
+                        src="../Project-images/footer/facebook.png"
+                        alt="페이스북"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="https://blog.naver.com/gj_tour"
+                      ><img
+                        src="../Project-images/footer/blog.png"
+                        alt="블로그"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/gj_tour/"
+                      ><img
+                        src="../Project-images/footer/insta.png"
+                        alt="인스타그램"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+
+              <a
+                href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"
+                ><img
+                  src="../Project-images/footer/wa.png"
+                  alt="웹접근성 인증"
+                  class="web-accessibility"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <!-- footer contents 끝 -->
+      </footer>
+      <!-- footer 끝 -->
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
