@@ -200,21 +200,8 @@
 
             <section class="table-section">
 
-                <form action="/join" id="signup-form" method="POST">
+                <form id="signup-form">
                     <table>
-                        <!-- 아이디 -->
-                        <tr>
-                            <th>
-                                <label for="id">
-                                    <span class="marking">*</span>회원아이디</label>
-                            </th>
-                            <td class="inputbox id">
-                                <input type="text" name="id" id="id">
-                                <button type="button" class="btn-primary">중복확인</button>
-                                <span class="warn"></span>
-                            </td>
-                        </tr>
-
                         <!-- 비번 -->
                         <tr>
                             <th>
@@ -439,6 +426,7 @@
 
     </footer>
     <!-- footer 끝 -->
+    <script type="module" src="../loginPages/firebase-config.js"></script>
     <script src="../loginPages/join/script.js"></script>
 </body>
 

@@ -281,33 +281,11 @@ $(".play").click(function () {
  ********************/
 
 
-let idveri = pwveri = pwchkveri = nameveri = phoneveri = emailveri = false;
+let pwveri = pwchkveri = nameveri = phoneveri = emailveri = false;
 
 // Essention Infomation
 let essenInfo = '<span class="text-red"> 필수 정보입니다. </span>';
 
-
-// 아이디
-// window.onload = function () {
-
-document.querySelector('.id input').addEventListener('focusout', function () {
-  let userId = this.value;
-  let idExp = /^[a-z0-9]{5,8}$/;
-  let idWarn = document.querySelector('.id .warn');
-
-  if (userId.length == 0) {
-    // 필수 정보입니다.
-    idWarn.innerHTML = essenInfo
-  } else if (!idExp.test(userId)) {
-    // 정규식에 맞지 않을때
-    idWarn.innerHTML = '<span class="text-red"> 5~8자의 영문 소문자, 숫자만 사용 가능합니다. </span>';
-  } else {
-    idveri = true;
-    idWarn.innerHTML = '<span class="text-green"> 멋진 아이디네요! </span>';
-  }
-})
-
-// }
 
 // 비밀번호
 let userPw = document.querySelector('.userpw input');
@@ -493,14 +471,44 @@ function sample6_execDaumPostcode() {
 let submitButton = document.getElementById('submit')
 
 submitButton.addEventListener('click', function (e) {
-  let isTrue = idveri && pwveri && pwchkveri && nameveri && phoneveri && emailveri;
+  e.preventDefault();
+
+  let isTrue = pwveri && pwchkveri && nameveri && phoneveri && emailveri;
 
   if (!isTrue) {
-    e.preventDefault();
     document.querySelectorAll('input').forEach(function (input) {
       input.dispatchEvent(new Event('focusout'));
     })
+    return;
   }
+
+  let email = document.getElementById('mail').value;
+  let pw = document.getElementById('pw').value;
+
+  window.firebaseCreateUser(window.firebaseAuth, email, pw)
+    .then(function (userCredential) {
+      let uid = userCredential.user.uid;
+      let profile = {
+        name: document.getElementById('name').value,
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        phone: document.getElementById('phonenum1').value
+          + document.querySelector('[name="phonenum2"]').value
+          + document.querySelector('[name="phonenum3"]').value,
+        postcode: document.getElementById('sample6_postcode').value,
+        address: document.getElementById('sample6_address').value,
+        addressDetail: document.getElementById('sample6_detailAddress').value,
+        addressExtra: document.getElementById('sample6_extraAddress').value,
+      };
+
+      return window.firebaseSetDoc(window.firebaseDoc(window.firebaseDb, 'users', uid), profile);
+    })
+    .then(function () {
+      location.href = '/login';
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert('회원가입에 실패했습니다: ' + error.message);
+    });
 })
 
 

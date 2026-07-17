@@ -159,15 +159,9 @@
 
           <div class="menu-buttons">
             <ul>
-              <% if (info) { %>
-                <div class="login-name">
-                  <%= info.name %>님
-                </div>
-                <li class="logout"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
-                <% } else { %>
-                  <li><a href="/login" class="login">로그인</a></li>
-                  <% } %>
-                    <!-- <li><a href="/login" class="login">로그인</a></li> -->
+              <div class="login-name" id="login-name" style="display: none;"></div>
+              <li class="logout" id="logout-btn" style="display: none;"><a href="#" id="logout-link"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+              <li id="login-link"><a href="/login" class="login">로그인</a></li>
                     <li class="login-home"><a href="/main"><img src="../Project-images/header/home-white.png"
                           alt="메인페이지로 가기"></a></li>
                     <li><a href="">
@@ -828,10 +822,12 @@
 
 
   </div>
+  <script type="module" src="../loginPages/firebase-config.js"></script>
   <script src="./js/header_footer.js"></script>
   <script src="./js/secion_map.js"></script>
   <script src="./js/section_cul_fes.js"></script>
   <script src="./js/API.js"></script>
+  <script src="./js/auth-status.js"></script>
 </body>
 
 </html>

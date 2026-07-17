@@ -404,7 +404,37 @@ input:focus {
   color: #fff;
   padding-left: 0;
   margin-top: 20px;
+  margin-bottom: 0;
   cursor: pointer;
+}
+
+.btn-google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 400px;
+  height: 60px;
+  margin: 0 auto 30px;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #3c4043;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-google-login:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-google-login .google-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .login ul {

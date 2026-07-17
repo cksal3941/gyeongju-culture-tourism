@@ -203,6 +203,47 @@ $(".info-list li").click(function(){
 
 // footer 스크립트
 
+// 로그인 제출
+
+document.getElementById('login-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  let email = document.getElementById('email').value;
+  let pw = document.getElementById('pw').value;
+
+  window.firebaseSignIn(window.firebaseAuth, email, pw)
+    .then(function () {
+      location.href = '/main';
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert('이메일 또는 비밀번호가 올바르지 않습니다.');
+    });
+})
+
+// 구글 로그인
+
+document.getElementById('google-login').addEventListener('click', function () {
+  window.firebaseSignInWithPopup(window.firebaseAuth, window.firebaseGoogleProvider)
+    .then(function (result) {
+      let user = result.user;
+      let profileRef = window.firebaseDoc(window.firebaseDb, 'users', user.uid);
+
+      return window.firebaseGetDoc(profileRef).then(function (snap) {
+        if (!snap.exists()) {
+          return window.firebaseSetDoc(profileRef, { name: user.displayName || user.email });
+        }
+      });
+    })
+    .then(function () {
+      location.href = '/main';
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert('구글 로그인에 실패했습니다.');
+    });
+})
+
 $(document).ready(function(){
   $('.banner-site-list').slick({
     slidesToShow: 7,
