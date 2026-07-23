@@ -203,6 +203,19 @@ $(".info-list li").click(function(){
 
 // footer 스크립트
 
+// 토스트 메시지
+function showToast(msg) {
+  let toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(function () { toast.classList.add('show'); }, 10);
+  setTimeout(function () {
+    toast.classList.remove('show');
+    setTimeout(function () { toast.remove(); }, 300);
+  }, 2000);
+}
+
 // 로그인 제출
 
 document.getElementById('login-form').addEventListener('submit', function (e) {
@@ -212,12 +225,21 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
   let pw = document.getElementById('pw').value;
 
   window.firebaseSignIn(window.firebaseAuth, email, pw)
-    .then(function () {
-      location.href = '/main';
+    .then(function (userCredential) {
+      showToast(userCredential.user.email + '님 안녕하세요!');
+      setTimeout(function () { location.href = '/main'; }, 1500);
     })
     .catch(function (error) {
       console.error(error);
-      alert('이메일 또는 비밀번호가 올바르지 않습니다.');
+      const messages = {
+        'auth/user-not-found': '등록되지 않은 이메일입니다.',
+        'auth/wrong-password': '비밀번호가 올바르지 않습니다.',
+        'auth/invalid-email': '이메일 형식이 올바르지 않습니다.',
+        'auth/invalid-credential': '이메일 또는 비밀번호가 올바르지 않습니다.',
+        'auth/too-many-requests': '로그인 시도가 너무 많습니다. 잠시 후 다시 시도해주세요.',
+        'auth/network-request-failed': '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
+      };
+      showToast(messages[error.code] || '로그인에 실패했습니다. 다시 시도해주세요.');
     });
 })
 

@@ -159,7 +159,7 @@
 
           <div class="menu-buttons">
             <ul>
-              <div class="login-name" id="login-name" style="display: none;"></div>
+              <li class="login-name" id="login-name" style="display: none;"></li>
               <li class="logout" id="logout-btn" style="display: none;"><a href="#" id="logout-link"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
               <li id="login-link"><a href="/login" class="login">로그인</a></li>
                     <li class="login-home"><a href="/main"><img src="../Project-images/header/home-white.png"
@@ -168,6 +168,17 @@
                         <i class="fa-solid fa-bars hamberger"></i></a></li>
             </ul>
           </div>
+          <script>
+            (function () {
+              var n = localStorage.getItem('gyeongju_user_name');
+              if (n) {
+                document.getElementById('login-name').textContent = n + '님 반갑습니다';
+                document.getElementById('login-name').style.display = '';
+                document.getElementById('logout-btn').style.display = '';
+                document.getElementById('login-link').style.display = 'none';
+              }
+            })();
+          </script>
 
         </div>
       </nav>
@@ -827,7 +838,6 @@
   <script src="./js/secion_map.js"></script>
   <script src="./js/section_cul_fes.js"></script>
   <script src="./js/API.js"></script>
-  <script src="./js/auth-status.js"></script>
 </body>
 
 </html>

@@ -70,5 +70,7 @@ app.get('/logout', function (requests, response) {
     response.redirect('/login');
 })
 
+module.exports = app;
+
 
 

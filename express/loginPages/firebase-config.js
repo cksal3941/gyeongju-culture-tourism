@@ -42,3 +42,52 @@ window.firebaseGetDoc = getDoc;
 window.firebaseDoc = doc;
 window.firebaseGoogleProvider = new GoogleAuthProvider();
 window.firebaseSignInWithPopup = signInWithPopup;
+
+// 헤더 로그인 상태 표시
+const nameEl = document.getElementById('login-name');
+const logoutEl = document.getElementById('logout-btn');
+const loginEl = document.getElementById('login-link');
+
+if (nameEl && logoutEl && loginEl) {
+  // localStorage 캐시로 즉시 표시 (Firebase 응답 전에 깜빡임 방지)
+  const cachedName = localStorage.getItem('gyeongju_user_name');
+  if (cachedName) {
+    nameEl.textContent = cachedName + '님 반갑습니다';
+    nameEl.style.display = '';
+    logoutEl.style.display = '';
+    loginEl.style.display = 'none';
+  }
+
+  onAuthStateChanged(auth, function (user) {
+    if (user) {
+      loginEl.style.display = 'none';
+      logoutEl.style.display = '';
+      nameEl.style.display = '';
+
+      getDoc(doc(db, 'users', user.uid))
+        .then(function (snap) {
+          const data = snap.exists() ? snap.data() : null;
+          const displayName = (data && data.name) ? data.name : user.email;
+          nameEl.textContent = displayName + '님 반갑습니다';
+          localStorage.setItem('gyeongju_user_name', displayName);
+        })
+        .catch(function () {
+          nameEl.textContent = user.email + '님 반갑습니다';
+          localStorage.setItem('gyeongju_user_name', user.email);
+        });
+    } else {
+      loginEl.style.display = '';
+      logoutEl.style.display = 'none';
+      nameEl.style.display = 'none';
+      localStorage.removeItem('gyeongju_user_name');
+    }
+  });
+
+  document.getElementById('logout-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    signOut(auth).then(function () {
+      localStorage.removeItem('gyeongju_user_name');
+      location.href = '/login';
+    });
+  });
+}

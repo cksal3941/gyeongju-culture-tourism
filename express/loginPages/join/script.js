@@ -281,6 +281,19 @@ $(".play").click(function () {
  ********************/
 
 
+// 토스트 메시지
+function showToast(msg) {
+  let toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(function () { toast.classList.add('show'); }, 10);
+  setTimeout(function () {
+    toast.classList.remove('show');
+    setTimeout(function () { toast.remove(); }, 300);
+  }, 2000);
+}
+
 let pwveri = pwchkveri = nameveri = phoneveri = emailveri = false;
 
 // Essention Infomation
@@ -388,6 +401,17 @@ genderInputs.forEach(function (item) {
 let numWarn = document.querySelector('.phone .warn');
 let phoneInputs = document.querySelectorAll('.phone input');
 
+// 연락처 자동 포커스 이동
+document.getElementById('phonenum1').addEventListener('change', function () {
+  document.querySelector('.phone2').focus();
+});
+
+document.querySelector('.phone2').addEventListener('input', function () {
+  if (this.value.length >= this.maxLength) {
+    document.querySelector('.phone3').focus();
+  }
+});
+
 $('.phone input').focusout(function () {
   // console.log($('.phone2').val());
 
@@ -404,7 +428,7 @@ $('.phone input').focusout(function () {
     $('.phone .warn').html('<span class="text-red"> 형식에 맞지않는 번호입니다. </span>');
   } else {
     phoneveri = true;
-    numWarn.empty();
+    numWarn.innerHTML = '';
   }
 })
 
@@ -485,6 +509,7 @@ submitButton.addEventListener('click', function (e) {
   let email = document.getElementById('mail').value;
   let pw = document.getElementById('pw').value;
 
+  console.log('회원가입 시도 이메일:', email);
   window.firebaseCreateUser(window.firebaseAuth, email, pw)
     .then(function (userCredential) {
       let uid = userCredential.user.uid;
@@ -500,14 +525,22 @@ submitButton.addEventListener('click', function (e) {
         addressExtra: document.getElementById('sample6_extraAddress').value,
       };
 
-      return window.firebaseSetDoc(window.firebaseDoc(window.firebaseDb, 'users', uid), profile);
-    })
-    .then(function () {
-      location.href = '/login';
+      window.firebaseSetDoc(window.firebaseDoc(window.firebaseDb, 'users', uid), profile)
+        .catch(function (err) { console.error('프로필 저장 실패:', err); });
+
+      showToast('회원가입이 완료되었습니다!');
+      setTimeout(function () { location.href = '/login'; }, 1500);
     })
     .catch(function (error) {
       console.error(error);
-      alert('회원가입에 실패했습니다: ' + error.message);
+      const messages = {
+        'auth/email-already-in-use': '이미 사용 중인 이메일입니다.',
+        'auth/invalid-email': '이메일 형식이 올바르지 않습니다.',
+        'auth/weak-password': '비밀번호는 6자 이상이어야 합니다.',
+        'auth/network-request-failed': '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
+      };
+      const msg = messages[error.code] || '회원가입에 실패했습니다. 다시 시도해주세요.';
+      showToast(msg);
     });
 })
 

@@ -9,7 +9,7 @@ $(".mainmenu-list").hover(function () {
 
 // 메인메뉴 hover시 폰트색깔, 이미지 바뀜
 $('.mainmenu-item').hover(function () {
-  $(this).find('.submenu-list').stop().slideDown(500);
+  $(this).find('.submenu-list').stop().slideDown(500).css('display', 'flex');
   $('.global-header').css('backgroundColor', '#fbfbfb');
   $('.global-header').css('transition', 'none');
   $('.top-menu, .top-menu a').css('color', '#000');
