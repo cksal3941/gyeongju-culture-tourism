@@ -29,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // 정적 파일 경로를 절대경로(__dirname)로 지정 (Vercel 서버리스 호환)
 app.use(express.static(__dirname))
+app.use(express.static(path.join(__dirname, 'main')))
 app.use(express.static(path.join(__dirname, 'tripHelper_sub5')))
 app.use(express.static(path.join(__dirname, 'loginPages')))
 
