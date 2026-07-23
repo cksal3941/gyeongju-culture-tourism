@@ -262,7 +262,7 @@ document.getElementById('google-login').addEventListener('click', function () {
     })
     .catch(function (error) {
       console.error(error);
-      alert('구글 로그인에 실패했습니다.');
+      showToast('오류: ' + error.code);
     });
 })
 
