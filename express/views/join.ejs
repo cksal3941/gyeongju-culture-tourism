@@ -426,8 +426,105 @@
 
     </footer>
     <!-- footer 끝 -->
-    <script type="module" src="../loginPages/firebase-config.js"></script>
-    <script src="../loginPages/join/script.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,
+        onAuthStateChanged,
+        GoogleAuthProvider,
+        signInWithPopup,
+      } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        setDoc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+      console.log('[Firebase] 초기화 시작');
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD3iGMuvK_bPpuPA_8AGDYQm1_TOPvcheM",
+        authDomain: "gyeongju-1ba76.firebaseapp.com",
+        databaseURL: "https://gyeongju-1ba76-default-rtdb.firebaseio.com",
+        projectId: "gyeongju-1ba76",
+        storageBucket: "gyeongju-1ba76.firebasestorage.app",
+        messagingSenderId: "436603050462",
+        appId: "1:436603050462:web:c9aea67437f1cd536d254f",
+      };
+
+      try {
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+        window.firebaseCreateUser = createUserWithEmailAndPassword;
+        window.firebaseSignIn = signInWithEmailAndPassword;
+        window.firebaseSignOut = signOut;
+        window.firebaseOnAuthStateChanged = onAuthStateChanged;
+        window.firebaseSetDoc = setDoc;
+        window.firebaseGetDoc = getDoc;
+        window.firebaseDoc = doc;
+        window.firebaseGoogleProvider = new GoogleAuthProvider();
+        window.firebaseSignInWithPopup = signInWithPopup;
+
+        console.log('[Firebase] 초기화 완료, window.firebaseCreateUser:', typeof window.firebaseCreateUser);
+
+        const nameEl = document.getElementById('login-name');
+        const logoutEl = document.getElementById('logout-btn');
+        const loginEl = document.getElementById('login-link');
+
+        if (nameEl && logoutEl && loginEl) {
+          const cachedName = localStorage.getItem('gyeongju_user_name');
+          if (cachedName) {
+            nameEl.textContent = cachedName + '님 반갑습니다';
+            nameEl.style.display = '';
+            logoutEl.style.display = '';
+            loginEl.style.display = 'none';
+          }
+
+          onAuthStateChanged(auth, function (user) {
+            if (user) {
+              loginEl.style.display = 'none';
+              logoutEl.style.display = '';
+              nameEl.style.display = '';
+              getDoc(doc(db, 'users', user.uid))
+                .then(function (snap) {
+                  const data = snap.exists() ? snap.data() : null;
+                  const displayName = (data && data.name) ? data.name : user.email;
+                  nameEl.textContent = displayName + '님 반갑습니다';
+                  localStorage.setItem('gyeongju_user_name', displayName);
+                })
+                .catch(function () {
+                  nameEl.textContent = user.email + '님 반갑습니다';
+                  localStorage.setItem('gyeongju_user_name', user.email);
+                });
+            } else {
+              loginEl.style.display = '';
+              logoutEl.style.display = 'none';
+              nameEl.style.display = 'none';
+              localStorage.removeItem('gyeongju_user_name');
+            }
+          });
+
+          document.getElementById('logout-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            signOut(auth).then(function () {
+              localStorage.removeItem('gyeongju_user_name');
+              location.href = '/login';
+            });
+          });
+        }
+      } catch (err) {
+        console.error('[Firebase] 초기화 실패:', err);
+      }
+    </script>
+    <script src="../loginPages/join/script.js" defer></script>
 </body>
 
 </html>

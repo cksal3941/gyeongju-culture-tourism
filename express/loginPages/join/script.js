@@ -13,13 +13,13 @@ $('.mainmenu-item').hover(function () {
   $('.global-header').css('backgroundColor', '#fbfbfb');
   $('.global-header').css('transition', 'none');
   $('.top-menu, .top-menu a').css('color', '#000');
-  $(".menu-img img").attr("src", "../Project-images/header/topIcon.png");
+  $(".menu-img img").attr("src", "/Project-images/header/topIcon.png");
   $('.mainmenu').css('border-color', '#bbb');
   $('.mainmenu-item>a').css('color', '#000');
   $('.mainmenu h1 span').css('color', '#000');
-  $(".mainmenu h1 img").attr("src", "../Project-images/header/logo.png");
+  $(".mainmenu h1 img").attr("src", "/Project-images/header/logo.png");
   $(".menu-buttons a, i").css('color', '#000');
-  $(".menu-buttons img").attr("src", "../Project-images/header/home-black2.png");
+  $(".menu-buttons img").attr("src", "/Project-images/header/home-black2.png");
   $(".submenu-list").css("border-top", "1px solid #bbb")
   $(this).find(".ul-wrapper").stop().fadeIn(1000);
   $(this).find(".submenu-left-img").stop().fadeIn(1000);
@@ -30,12 +30,12 @@ $('.mainmenu-item').hover(function () {
   $('.global-header').css('backgroundColor', 'transparent');
   $('.global-header').css('transition', '1000ms', 'ease-in-out');
   $('.top-menu, .top-menu a').css('color', '#fff');
-  $(".menu-img img").attr("src", "../Project-images/header/topIcon_white.png");
+  $(".menu-img img").attr("src", "/Project-images/header/topIcon_white.png");
   $('.mainmenu-item>a').css('color', '#fff');
   $('.mainmenu h1 span').css('color', '#fff');
-  $(".mainmenu h1 img").attr("src", "../Project-images/header/white-logo.png");
+  $(".mainmenu h1 img").attr("src", "/Project-images/header/white-logo.png");
   $(".menu-buttons a, i").css('color', '#fff');
-  $(".menu-buttons img").attr("src", "../Project-images/header/home-white.png");
+  $(".menu-buttons img").attr("src", "/Project-images/header/home-white.png");
   $(this).find(".ul-wrapper").stop().fadeOut(500);
   $(this).find(".submenu-left-img").stop().fadeOut(500);
 });
@@ -439,7 +439,7 @@ function sample6_execDaumPostcode() {
 
 // 가입하기 제출
 
-
+console.log('[join/script.js] 로드됨, window.firebaseCreateUser:', typeof window.firebaseCreateUser);
 
 let submitButton = document.getElementById('submit')
 
@@ -447,7 +447,9 @@ submitButton.addEventListener('click', function (e) {
   e.preventDefault();
 
   try {
+    console.log('[join] 회원가입 시도, firebaseCreateUser:', typeof window.firebaseCreateUser);
     if (typeof window.firebaseCreateUser !== 'function') {
+      console.error('[join] Firebase 미로드 상태 - window 키:', Object.keys(window).filter(k => k.startsWith('firebase')));
       showToast('Firebase 로딩 중입니다. 잠시 후 다시 시도해주세요.');
       return;
     }

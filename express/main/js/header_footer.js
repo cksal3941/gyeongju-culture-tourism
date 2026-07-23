@@ -13,13 +13,13 @@ $('.mainmenu-item').hover(function () {
   $('.global-header').css('backgroundColor', '#fbfbfb');
   $('.global-header').css('transition', 'none');
   $('.top-menu, .top-menu a').css('color', '#000');
-  $(".menu-img img").attr("src", "../Project-images/header/topIcon.png");
+  $(".menu-img img").attr("src", "/Project-images/header/topIcon.png");
   $('.mainmenu').css('border-color', '#bbb');
   $('.mainmenu-item>a').css('color', '#000');
   $('.mainmenu h1 span').css('color', '#000');
-  $(".mainmenu h1 img").attr("src", "../Project-images/header/logo.png");
+  $(".mainmenu h1 img").attr("src", "/Project-images/header/logo.png");
   $(".menu-buttons div, a, i").css('color', '#000');
-  $(".menu-buttons img").attr("src", "../Project-images/header/home-black2.png");
+  $(".menu-buttons img").attr("src", "/Project-images/header/home-black2.png");
   $(".submenu-list").css("border-top", "1px solid #bbb")
   $(this).find(".ul-wrapper").stop().fadeIn(1000);
   $(this).find(".submenu-left-img").stop().fadeIn(1000);
@@ -30,12 +30,12 @@ $('.mainmenu-item').hover(function () {
   $('.global-header').css('backgroundColor', 'transparent');
   $('.global-header').css('transition', 'background-color 500ms ease-in-out');
   $('.top-menu, .top-menu a').css('color', '#fff');
-  $(".menu-img img").attr("src", "../Project-images/header/topIcon_white.png");
+  $(".menu-img img").attr("src", "/Project-images/header/topIcon_white.png");
   $('.mainmenu-item>a').css('color', '#fff');
   $('.mainmenu h1 span').css('color', '#fff');
-  $(".mainmenu h1 img").attr("src", "../Project-images/header/white-logo.png");
+  $(".mainmenu h1 img").attr("src", "/Project-images/header/white-logo.png");
   $(".menu-buttons div, a, i").css('color', '#fff');
-  $(".menu-buttons img").attr("src", "../Project-images/header/home-white.png");
+  $(".menu-buttons img").attr("src", "/Project-images/header/home-white.png");
   $(this).find(".ul-wrapper").stop().fadeOut(500);
   $(this).find(".submenu-left-img").stop().fadeOut(500);
 });
