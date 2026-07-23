@@ -69,6 +69,19 @@ app.get('/logout', function (requests, response) {
     response.redirect('/login');
 })
 
+// 미세먼지 API 프록시 (정부 API는 CORS 미지원 + HTTP → 서버에서 대신 호출)
+app.get('/api/dust', async function (req, res) {
+    try {
+        const serviceKey = '7gpEZV105Yp6x9Fq7q3wadEQtdMDnJ5YUCi86TMqXyp1l3ox8sh7vZaN1%2BV6rNe%2BuoSVktxWkKtR4%2B%2F0CQZGwQ%3D%3D';
+        const url = `https://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureSidoLIst?serviceKey=${serviceKey}&returnType=json&numOfRows=100&pageNo=1&sidoName=%EA%B2%BD%EB%B6%81&searchCondition=DAILY`;
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch (e) {
+        res.status(500).json({ error: 'dust api failed' });
+    }
+});
+
 module.exports = app;
 
 
