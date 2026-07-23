@@ -99,24 +99,6 @@ gyeongju-culture-tourism/
 
 ---
 
-## ⚙️ 로컬 실행 방법
-
-```bash
-# 저장소 클론
-git clone https://github.com/cksal3941/gyeongju-culture-tourism.git
-cd gyeongju-culture-tourism/express
-
-# 패키지 설치
-npm install
-
-# 개발 서버 실행
-npm run dev
-```
-
-서버 실행 후 `http://localhost:7000` 에서 확인할 수 있습니다.
-
----
-
 ## 🔥 주요 기능
 
 - **메인 슬라이드** — Slick Carousel을 이용한 자동 슬라이드
