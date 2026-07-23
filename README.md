@@ -2,7 +2,7 @@
 
 > 경주시 문화관광 홈페이지를 리뉴얼한 팀 프로젝트입니다.
 
-[![Vercel](https://img.shields.io/badge/Vercel-배포중-black?logo=vercel&logoColor=white)](https://gyeongju-culture-tourism.vercel.app/)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-black?logo=vercel&logoColor=white)](https://gyeongju-culture-tourism.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-저장소-181717?logo=github)](https://github.com/cksal3941/gyeongju-culture-tourism)
 
 ## 📌 프로젝트 소개
