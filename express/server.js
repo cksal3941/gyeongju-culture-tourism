@@ -27,11 +27,13 @@ if (process.env.NODE_ENV !== 'production') {
     })
 }
 
+const staticOptions = { maxAge: '7d' };
+
 // 정적 파일 경로를 절대경로(__dirname)로 지정 (Vercel 서버리스 호환)
-app.use(express.static(__dirname))
-app.use(express.static(path.join(__dirname, 'main')))
-app.use(express.static(path.join(__dirname, 'tripHelper_sub5')))
-app.use(express.static(path.join(__dirname, 'loginPages')))
+app.use(express.static(__dirname, staticOptions))
+app.use(express.static(path.join(__dirname, 'main'), staticOptions))
+app.use(express.static(path.join(__dirname, 'tripHelper_sub5'), staticOptions))
+app.use(express.static(path.join(__dirname, 'loginPages'), staticOptions))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

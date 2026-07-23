@@ -28,7 +28,7 @@ $('.mainmenu-item').hover(function () {
 }, function () {
   $(this).find('.submenu-list').stop().slideUp();
   $('.global-header').css('backgroundColor', 'transparent');
-  $('.global-header').css('transition', '1000ms', 'ease-in-out');
+  $('.global-header').css('transition', 'background-color 500ms ease-in-out');
   $('.top-menu, .top-menu a').css('color', '#fff');
   $(".menu-img img").attr("src", "../Project-images/header/topIcon_white.png");
   $('.mainmenu-item>a').css('color', '#fff');
