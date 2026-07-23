@@ -18,24 +18,22 @@ package.json에서도 index.js -> server.js로 변경해야 함
 
 
 const express = require('express');
+const path = require('path');
 const app = express();
 
-app.listen(7000, function () {
-    console.log('7000번 포트')
-})
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(7000, function () {
+        console.log('7000번 포트')
+    })
+}
 
-// 폴더 내 모든 정적파일 제공(js, css, images, fonts)
-// 폴더명 다를시 변경해야함
+// 정적 파일 경로를 절대경로(__dirname)로 지정 (Vercel 서버리스 호환)
 app.use(express.static(__dirname))
-app.use(express.static("./tripHelper_sub5"))
-app.use(express.static("./loginPages"))
+app.use(express.static(path.join(__dirname, 'tripHelper_sub5')))
+app.use(express.static(path.join(__dirname, 'loginPages')))
 
-
-/*************************
- * 링크 연결
- * 설치 : npm install ejs
- * ***********************/
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // 메인페이지
 app.get('/', function (requests, response) {
