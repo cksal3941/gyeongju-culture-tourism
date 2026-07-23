@@ -446,20 +446,26 @@ let submitButton = document.getElementById('submit')
 submitButton.addEventListener('click', function (e) {
   e.preventDefault();
 
-  let isTrue = pwveri && pwchkveri && nameveri && phoneveri && emailveri;
+  try {
+    if (typeof window.firebaseCreateUser !== 'function') {
+      showToast('Firebase 로딩 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
 
-  if (!isTrue) {
-    document.querySelectorAll('input').forEach(function (input) {
-      input.dispatchEvent(new Event('focusout'));
-    })
-    return;
-  }
+    let isTrue = pwveri && pwchkveri && nameveri && phoneveri && emailveri;
 
-  let email = document.getElementById('mail').value;
-  let pw = document.getElementById('pw').value;
+    if (!isTrue) {
+      document.querySelectorAll('input').forEach(function (input) {
+        input.dispatchEvent(new Event('focusout'));
+      });
+      showToast('모든 필드를 올바르게 입력해주세요.');
+      return;
+    }
 
-  console.log('회원가입 시도 이메일:', email);
-  window.firebaseCreateUser(window.firebaseAuth, email, pw)
+    let email = document.getElementById('mail').value;
+    let pw = document.getElementById('pw').value;
+
+    window.firebaseCreateUser(window.firebaseAuth, email, pw)
     .then(function (userCredential) {
       let uid = userCredential.user.uid;
       let profile = {
@@ -491,6 +497,10 @@ submitButton.addEventListener('click', function (e) {
       const msg = messages[error.code] || '회원가입에 실패했습니다. 다시 시도해주세요.';
       showToast(msg);
     });
+  } catch (err) {
+    showToast('오류: ' + err.message);
+    console.error(err);
+  }
 })
 
 
